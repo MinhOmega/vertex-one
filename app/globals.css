@@ -50,7 +50,7 @@
   --background: oklch(0.98 0.003 106.423);
   --foreground: oklch(0.135 0.042 254.139);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.135 0.042 254.139);
+  --card-foreground: oklch(0.15 0.045 254.139);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.135 0.042 254.139);
   
@@ -62,9 +62,9 @@
   --secondary: oklch(0.921 0.019 106.423);
   --secondary-foreground: oklch(0.135 0.042 254.139);
   
-  /* Muted tones */
+  /* Muted tones - Enhanced contrast for accessibility */
   --muted: oklch(0.95 0.013 106.423);
-  --muted-foreground: oklch(0.456 0.015 247.858);
+  --muted-foreground: oklch(0.35 0.025 247.858);
   
   /* Accent - Gaming yellow/gold */
   --accent: oklch(0.827 0.184 83.317);
@@ -114,7 +114,7 @@
   --background: oklch(0.095 0.015 254.139);
   --foreground: oklch(0.955 0.010 106.423);
   --card: oklch(0.145 0.020 254.139);
-  --card-foreground: oklch(0.955 0.010 106.423);
+  --card-foreground: oklch(0.92 0.015 106.423);
   --popover: oklch(0.145 0.020 254.139);
   --popover-foreground: oklch(0.955 0.010 106.423);
   
@@ -126,9 +126,9 @@
   --secondary: oklch(0.195 0.025 254.139);
   --secondary-foreground: oklch(0.955 0.010 106.423);
   
-  /* Muted */
+  /* Muted - Enhanced contrast for accessibility */
   --muted: oklch(0.195 0.025 254.139);
-  --muted-foreground: oklch(0.758 0.015 247.858);
+  --muted-foreground: oklch(0.65 0.025 247.858);
   
   /* Accent - Gaming yellow/gold for dark */
   --accent: oklch(0.877 0.204 83.317);
@@ -225,18 +225,50 @@
     );
   }
   
-  /* High contrast mode support */
+  /* Enhanced accessibility styles */
+  [data-slot="tabs-trigger"] {
+    /* Ensure tab triggers have sufficient contrast */
+    --tw-text-opacity: 1;
+    color: rgb(var(--foreground) / var(--tw-text-opacity));
+  }
+  
+  [data-slot="tabs-trigger"][data-state="active"] {
+    /* Active tab state with high contrast */
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-weight: 600;
+  }
+  
+  [data-slot="badge"] {
+    /* Improve badge contrast */
+    font-weight: 600;
+    border-width: 1px;
+  }
+  
+  /* Sports section headings */
+  .sport-heading {
+    color: rgb(var(--foreground));
+    font-weight: 600;
+  }
+  
+  /* High contrast mode support - Enhanced for accessibility */
   @media (prefers-contrast: high) {
     .dark {
       --foreground: oklch(1 0 0);
       --background: oklch(0 0 0);
       --border: oklch(0.5 0 0);
+      --card-foreground: oklch(1 0 0);
+      --muted-foreground: oklch(0.8 0 0);
+      --secondary-foreground: oklch(1 0 0);
     }
     
     :root {
       --foreground: oklch(0 0 0);
       --background: oklch(1 0 0);
       --border: oklch(0.5 0 0);
+      --card-foreground: oklch(0 0 0);
+      --muted-foreground: oklch(0.2 0 0);
+      --secondary-foreground: oklch(0 0 0);
     }
   }
   

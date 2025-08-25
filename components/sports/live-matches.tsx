@@ -211,7 +211,7 @@ const LiveMatches = () => {
             <Card key={index} className={`cursor-pointer transition-all duration-200 hover:scale-105 ${sport.active ? 'ring-2 ring-blue-500 bg-blue-50' : 'hover:bg-gray-50'}`}>
               <CardContent className="p-4 text-center">
                 <div className="text-2xl mb-2">{sport.icon}</div>
-                <h3 className="font-semibold text-sm">{sport.name}</h3>
+                <h3 className={`font-semibold text-sm sport-heading ${sport.active ? 'text-blue-600' : 'text-foreground'}`}>{sport.name}</h3>
                 <Badge variant="secondary" className="mt-2">
                   {sport.count} matches
                 </Badge>
@@ -225,22 +225,22 @@ const LiveMatches = () => {
           <TabsList className="grid w-full grid-cols-4 bg-white">
             <TabsTrigger value="live" className="flex items-center space-x-2">
               <Play className="w-4 h-4" />
-              <span>Live</span>
+              <span className="text-blue-600">Live</span>
               <Badge className="bg-red-600">6</Badge>
             </TabsTrigger>
             <TabsTrigger value="today" className="flex items-center space-x-2">
               <Clock className="w-4 h-4" />
-              <span>Today</span>
+              <span className="text-blue-600">Today</span>
               <Badge variant="secondary">168</Badge>
             </TabsTrigger>
             <TabsTrigger value="early" className="flex items-center space-x-2">
               <Globe className="w-4 h-4" />
-              <span>Early</span>
+              <span className="text-blue-600">Early</span>
               <Badge variant="secondary">484</Badge>
             </TabsTrigger>
             <TabsTrigger value="boost" className="flex items-center space-x-2">
               <Zap className="w-4 h-4" />
-              <span>Bet Boost</span>
+              <span className="text-blue-600">Bet Boost</span>
               <Badge className="bg-yellow-500">HOT</Badge>
             </TabsTrigger>
           </TabsList>
