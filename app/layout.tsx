@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://vertexone.vn'),
   title: {
     default: "Vertex One - Premium Gaming Platform | Cá Cược Thể Thao & Casino Trực Tuyến",
     template: "%s | Vertex One"
