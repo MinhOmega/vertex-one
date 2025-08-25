@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://vertexone.vn'
+  const baseUrl = 'https://vertex-one-sandy.vercel.app/'
   
   return [
     {

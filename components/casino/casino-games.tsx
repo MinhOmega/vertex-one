@@ -47,7 +47,7 @@ const CasinoGames = () => {
   const slotGames = [
     {
       id: 'slot-1',
-      name: 'Kho Báu Của Người Aztec',
+      name: 'Aztec Treasure',
       provider: 'Pragmatic Play',
       rtp: 96.5,
       jackpot: 2100000000,
@@ -61,7 +61,7 @@ const CasinoGames = () => {
     },
     {
       id: 'slot-2',
-      name: 'Viên Ngọc May Mắn 3',
+      name: 'Lucky Gems 3',
       provider: 'Play\'n GO',
       rtp: 97.2,
       jackpot: 850000000,
@@ -75,7 +75,7 @@ const CasinoGames = () => {
     },
     {
       id: 'slot-3',
-      name: 'Người Giàu',
+      name: 'The Rich One',
       provider: 'NetEnt',
       rtp: 95.8,
       jackpot: 3200000000,
@@ -89,7 +89,7 @@ const CasinoGames = () => {
     },
     {
       id: 'slot-4',
-      name: 'Đế Chế Vàng',
+      name: 'Golden Empire',
       provider: 'Microgaming',
       rtp: 96.8,
       jackpot: 1750000000,
@@ -103,7 +103,7 @@ const CasinoGames = () => {
     },
     {
       id: 'slot-5',
-      name: 'Nữ Hoàng Băng Giá',
+      name: 'Ice Queen',
       provider: 'Play\'n GO',
       rtp: 96.3,
       jackpot: 1200000000,
@@ -117,7 +117,7 @@ const CasinoGames = () => {
     },
     {
       id: 'slot-6',
-      name: 'Miền Tây Hoang Dã',
+      name: 'Wild West',
       provider: 'Red Tiger',
       rtp: 95.9,
       jackpot: 980000000,
@@ -204,31 +204,31 @@ const CasinoGames = () => {
   const promotions = [
     {
       id: 'promo-1',
-      title: "🎁 Khuyến Mãi Chào Mừng 200%",
-      description: "Nhận thưởng 200% cho lần nạp đầu tiên lên đến ₫10,000,000",
-      content: "Áp dụng cho thành viên mới. Yêu cầu cược gấp 35 lần số tiền thưởng. Thời hạn 30 ngày.",
-      terms: "Điều khoản áp dụng cho khuyến mãi chào mừng dành cho thành viên mới"
+      title: "🎁 Welcome Bonus 200%",
+      description: "Get 200% bonus on first deposit up to ₫10,000,000",
+      content: "Available for new members. 35x wagering requirement. Valid for 30 days.",
+      terms: "Terms and conditions for welcome bonus for new members"
     },
     {
       id: 'promo-2',
       title: "💎 VIP Cashback 15%",
-      description: "Hoàn trả 15% cho thành viên VIP mỗi tuần",
-      content: "Tự động hoàn trả vào thứ 2 hàng tuần. Không yêu cầu cược gấp. Tối đa ₫5,000,000/tuần.",
-      terms: "Điều khoản áp dụng cho chương trình VIP cashback hàng tuần"
+      description: "15% cashback for VIP members every week",
+      content: "Automatic refund every Monday. No wagering requirement. Maximum ₫5,000,000/week.",
+      terms: "Terms and conditions for weekly VIP cashback program"
     },
     {
       id: 'promo-3',
       title: "🔥 Slot Tournament",
-      description: "Giải đấu slot hàng tuần với giải thưởng ₫100,000,000",
-      content: "Tham gia miễn phí. Xếp hạng dựa trên số lần thắng liên tiếp. Top 100 được thưởng.",
-      terms: "Điều khoản áp dụng cho giải đấu slot hàng tuần"
+      description: "Weekly slot tournament with ₫100,000,000 prize pool",
+      content: "Free to join. Ranking based on consecutive wins. Top 100 rewarded.",
+      terms: "Terms and conditions for weekly slot tournament"
     },
     {
       id: 'promo-4',
-      title: "🎰 Free Spins Daily",
-      description: "50 lượt quay miễn phí mỗi ngày cho thành viên",
-      content: "Đăng nhập hàng ngày để nhận. Áp dụng cho game Starburst và Gonzo's Quest.",
-      terms: "Điều khoản áp dụng cho chương trình free spins hàng ngày"
+      title: "🎰 Daily Free Spins",
+      description: "50 free spins daily for members",
+      content: "Daily login to claim. Available for Starburst and Gonzo's Quest games.",
+      terms: "Terms and conditions for daily free spins program"
     }
   ];
 
@@ -269,62 +269,62 @@ const CasinoGames = () => {
         <header className="text-center mb-12">
           <div className="flex items-center justify-center mb-6">
             <Sparkles className="w-12 h-12 text-accent mr-4 animate-spin" aria-hidden="true" />
-            <h1 id="casino-title" className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Casino Trực Tuyến
-            </h1>
-          </div>
-          <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Trải nghiệm sòng bạc đẳng cấp thế giới với dealers chuyên nghiệp và jackpot khổng lồ
-          </p>
+             <h1 id="casino-title" className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+               Live Casino
+             </h1>
+           </div>
+           <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+             Experience world-class casino with professional dealers and massive jackpots
+           </p>
 
           {/* Jackpot Display */}
           <Card className="bg-accent text-accent-foreground border-accent/20 max-w-md mx-auto shadow-2xl">
             <CardContent className="p-6 text-center">
               <Crown className="w-8 h-8 mx-auto mb-2" aria-hidden="true" />
-              <h2 className="font-bold text-lg mb-2">MEGA JACKPOT</h2>
-              <p 
-                className="text-2xl lg:text-3xl font-bold"
-                aria-label={`Current mega jackpot is ${jackpotAmount.toLocaleString()} Vietnamese Dong`}
-              >
-                ₫{jackpotAmount.toLocaleString()}
-              </p>
-              <p className="text-sm mt-2 opacity-90">Đang tăng mỗi giây!</p>
+               <h2 className="font-bold text-lg mb-2">MEGA JACKPOT</h2>
+               <p
+                 className="text-2xl lg:text-3xl font-bold"
+                 aria-label={`Current mega jackpot is ${jackpotAmount.toLocaleString()} Vietnamese Dong`}
+               >
+                 ₫{jackpotAmount.toLocaleString()}
+               </p>
+               <p className="text-sm mt-2 opacity-90">Growing every second!</p>
             </CardContent>
           </Card>
         </header>
 
         {/* Live Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12" role="region" aria-label="Live statistics">
-          {[
-            { 
-              label: 'Người chơi online', 
-              value: liveStats.totalPlayers, 
-              icon: Users, 
-              color: 'text-primary',
-              ariaLabel: `${liveStats.totalPlayers} players currently online`
-            },
-            { 
-              label: 'Tổng thắng hôm nay', 
-              value: formatCurrency(liveStats.totalWinnings), 
-              icon: DollarSign, 
-              color: 'text-success',
-              ariaLabel: `Total winnings today: ${formatCurrency(liveStats.totalWinnings)}`
-            },
-            { 
-              label: 'Thắng lớn nhất', 
-              value: formatCurrency(liveStats.biggestWin), 
-              icon: Trophy, 
-              color: 'text-accent',
-              ariaLabel: `Biggest win: ${formatCurrency(liveStats.biggestWin)}`
-            },
-            { 
-              label: 'Game đang chơi', 
-              value: liveStats.activeGames, 
-              icon: PlayCircle, 
-              color: 'text-muted-foreground',
-              ariaLabel: `${liveStats.activeGames} games currently being played`
-            }
-          ].map((stat, index) => (
+            {[
+              {
+                label: 'Online Players',
+                value: liveStats.totalPlayers,
+                icon: Users,
+                color: 'text-primary',
+                ariaLabel: `${liveStats.totalPlayers} players currently online`
+              },
+              {
+                label: 'Today\'s Total Wins',
+                value: formatCurrency(liveStats.totalWinnings),
+                icon: DollarSign,
+                color: 'text-success',
+                ariaLabel: `Total winnings today: ${formatCurrency(liveStats.totalWinnings)}`
+              },
+              {
+                label: 'Biggest Win',
+                value: formatCurrency(liveStats.biggestWin),
+                icon: Trophy,
+                color: 'text-accent',
+                ariaLabel: `Biggest win: ${formatCurrency(liveStats.biggestWin)}`
+              },
+              {
+                label: 'Games Playing',
+                value: liveStats.activeGames,
+                icon: PlayCircle,
+                color: 'text-muted-foreground',
+                ariaLabel: `${liveStats.activeGames} games currently being played`
+              }
+            ].map((stat, index) => (
             <Card key={index} className="bg-card border-border shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-4 text-center">
                 <stat.icon className={`w-8 h-8 mx-auto mb-2 ${stat.color}`} aria-hidden="true" />
@@ -368,22 +368,22 @@ const CasinoGames = () => {
               <Dice6 className="w-4 h-4 mr-2" aria-hidden="true" />
               Dice Games
             </TabsTrigger>
-            <TabsTrigger 
-              value="promotions" 
-              className="text-muted-foreground data-[state=active]:bg-card data-[state=active]:text-foreground font-medium"
-            >
-              <Gift className="w-4 h-4 mr-2" aria-hidden="true" />
-              Khuyến Mãi
-            </TabsTrigger>
+             <TabsTrigger
+               value="promotions"
+               className="text-muted-foreground data-[state=active]:bg-card data-[state=active]:text-foreground font-medium"
+             >
+               <Gift className="w-4 h-4 mr-2" aria-hidden="true" />
+               Promotions
+             </TabsTrigger>
           </TabsList>
 
           {/* Slot Games */}
           <TabsContent value="slots" className="space-y-6">
             <Alert className="bg-accent/20 border-accent text-foreground">
               <Flame className="h-4 w-4 text-accent" />
-              <AlertTitle className="text-accent font-bold">Slot Games Hot</AlertTitle>
+              <AlertTitle className="text-accent font-bold">Hot Slot Games</AlertTitle>
               <AlertDescription className="text-muted-foreground">
-                Chơi ngay để có cơ hội trúng Mega Jackpot ₫{jackpotAmount.toLocaleString()}!
+                Play now to win Mega Jackpot ₫{jackpotAmount.toLocaleString()}!
               </AlertDescription>
             </Alert>
 
@@ -434,76 +434,76 @@ const CasinoGames = () => {
                     />
                     
                     <div className="space-y-2">
-                      <Button 
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
-                        aria-label={`Play ${game.name} now`}
-                      >
-                        <PlayCircle className="w-4 h-4 mr-2" aria-hidden="true" />
-                        Chơi Ngay
-                      </Button>
+                       <Button
+                         className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
+                         aria-label={`Play ${game.name} now`}
+                       >
+                         <PlayCircle className="w-4 h-4 mr-2" aria-hidden="true" />
+                         Play Now
+                       </Button>
                       
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button 
-                            variant="outline" 
-                            className="w-full border-border text-foreground hover:bg-muted"
-                            aria-label={`View details for ${game.name}`}
-                          >
-                            <Info className="w-4 h-4 mr-2" aria-hidden="true" />
-                            Chi Tiết
-                          </Button>
-                        </DialogTrigger>
-                        <DialogContent className="bg-card border-border text-foreground max-w-md">
-                          <DialogHeader>
-                            <DialogTitle className="flex items-center">
-                              <div className="relative w-12 h-12 mr-3 rounded overflow-hidden">
-                                <Image
-                                  src={game.image}
-                                  alt={game.name}
-                                  fill
-                                  className="object-cover"
-                                  sizes="48px"
-                                />
-                              </div>
-                              {game.name}
-                            </DialogTitle>
-                            <DialogDescription className="text-muted-foreground">
-                              Chi tiết về game {game.name} từ {game.provider}
-                            </DialogDescription>
-                          </DialogHeader>
-                          <div className="space-y-4">
-                            <div className="grid grid-cols-2 gap-4 text-sm">
-                              <div>
-                                <span className="text-muted-foreground">RTP: </span>
-                                <span className="text-success font-bold">{game.rtp}%</span>
-                              </div>
-                              <div>
-                                <span className="text-muted-foreground">Độ khó: </span>
-                                <span className="text-foreground">{game.difficulty}</span>
-                              </div>
-                              <div>
-                                <span className="text-muted-foreground">Chủ đề: </span>
-                                <span className="text-foreground">{game.theme}</span>
-                              </div>
-                              <div>
-                                <span className="text-muted-foreground">Paylines: </span>
-                                <span className="text-foreground">{game.paylines}</span>
-                              </div>
-                            </div>
-                            <Separator className="bg-border" />
-                            <div>
-                              <h4 className="font-semibold mb-2 text-foreground">Cược tối thiểu/tối đa:</h4>
-                              <p className="text-sm text-muted-foreground">
-                                ₫{game.minBet.toLocaleString()} - ₫{game.maxBet.toLocaleString()}
-                              </p>
-                            </div>
-                            <Button 
-                              className="w-full bg-success hover:bg-success/90 text-success-foreground"
-                              aria-label={`Start playing ${game.name}`}
-                            >
-                              Bắt Đầu Chơi
-                            </Button>
-                          </div>
+                           <Button
+                             variant="outline"
+                             className="w-full border-border text-foreground hover:bg-muted"
+                             aria-label={`View details for ${game.name}`}
+                           >
+                             <Info className="w-4 h-4 mr-2" aria-hidden="true" />
+                             Details
+                           </Button>
+                         </DialogTrigger>
+                         <DialogContent className="bg-card border-border text-foreground max-w-md">
+                           <DialogHeader>
+                             <DialogTitle className="flex items-center">
+                               <div className="relative w-12 h-12 mr-3 rounded overflow-hidden">
+                                 <Image
+                                   src={game.image}
+                                   alt={game.name}
+                                   fill
+                                   className="object-cover"
+                                   sizes="48px"
+                                 />
+                               </div>
+                               {game.name}
+                             </DialogTitle>
+                             <DialogDescription className="text-muted-foreground">
+                               Details about {game.name} from {game.provider}
+                             </DialogDescription>
+                           </DialogHeader>
+                           <div className="space-y-4">
+                             <div className="grid grid-cols-2 gap-4 text-sm">
+                               <div>
+                                 <span className="text-muted-foreground">RTP: </span>
+                                 <span className="text-success font-bold">{game.rtp}%</span>
+                               </div>
+                               <div>
+                                 <span className="text-muted-foreground">Difficulty: </span>
+                                 <span className="text-foreground">{game.difficulty}</span>
+                               </div>
+                               <div>
+                                 <span className="text-muted-foreground">Theme: </span>
+                                 <span className="text-foreground">{game.theme}</span>
+                               </div>
+                               <div>
+                                 <span className="text-muted-foreground">Paylines: </span>
+                                 <span className="text-foreground">{game.paylines}</span>
+                               </div>
+                             </div>
+                             <Separator className="bg-border" />
+                             <div>
+                               <h4 className="font-semibold mb-2 text-foreground">Min/Max Bet:</h4>
+                               <p className="text-sm text-muted-foreground">
+                                 ₫{game.minBet.toLocaleString()} - ₫{game.maxBet.toLocaleString()}
+                               </p>
+                             </div>
+                             <Button
+                               className="w-full bg-success hover:bg-success/90 text-success-foreground"
+                               aria-label={`Start playing ${game.name}`}
+                             >
+                               Start Playing
+                             </Button>
+                           </div>
                         </DialogContent>
                       </Dialog>
                     </div>
@@ -540,37 +540,37 @@ const CasinoGames = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Người chơi:</span>
-                      <div className="flex items-center space-x-1">
-                        <Users className="w-4 h-4 text-primary" aria-hidden="true" />
-                        <span 
-                          className="text-foreground font-bold"
-                          aria-label={`${table.players} players at this table`}
-                        >
-                          {table.players}
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Cược tối thiểu:</span>
-                        <span className="text-success">₫{table.minBet.toLocaleString()}</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Cược tối đa:</span>
-                        <span className="text-accent">₫{table.maxBet.toLocaleString()}</span>
-                      </div>
-                    </div>
-                    
-                    <Button 
-                      className="w-full bg-destructive hover:bg-destructive/90 text-destructive-foreground"
-                      aria-label={`Join ${table.name} table with dealer ${table.dealer}`}
-                    >
-                      <PlayCircle className="w-4 h-4 mr-2" aria-hidden="true" />
-                      Vào Bàn
-                    </Button>
+                     <div className="flex items-center justify-between">
+                       <span className="text-muted-foreground">Players:</span>
+                       <div className="flex items-center space-x-1">
+                         <Users className="w-4 h-4 text-primary" aria-hidden="true" />
+                         <span
+                           className="text-foreground font-bold"
+                           aria-label={`${table.players} players at this table`}
+                         >
+                           {table.players}
+                         </span>
+                       </div>
+                     </div>
+
+                     <div className="space-y-2">
+                       <div className="flex justify-between text-sm">
+                         <span className="text-muted-foreground">Min Bet:</span>
+                         <span className="text-success">₫{table.minBet.toLocaleString()}</span>
+                       </div>
+                       <div className="flex justify-between text-sm">
+                         <span className="text-muted-foreground">Max Bet:</span>
+                         <span className="text-accent">₫{table.maxBet.toLocaleString()}</span>
+                       </div>
+                     </div>
+
+                     <Button
+                       className="w-full bg-destructive hover:bg-destructive/90 text-destructive-foreground"
+                       aria-label={`Join ${table.name} table with dealer ${table.dealer}`}
+                     >
+                       <PlayCircle className="w-4 h-4 mr-2" aria-hidden="true" />
+                       Join Table
+                     </Button>
                   </CardContent>
                 </Card>
               ))}
@@ -581,33 +581,33 @@ const CasinoGames = () => {
           <TabsContent value="dice" className="space-y-6">
             <Card className="bg-card border-border shadow-lg max-w-md mx-auto">
               <CardHeader className="text-center">
-                <CardTitle className="text-foreground flex items-center justify-center">
-                  <Dice6 className="w-6 h-6 mr-2 text-destructive" aria-hidden="true" />
-                  Mini Dice Game
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="text-center" role="region" aria-live="polite" aria-label="Dice game results">
-                  <div className="flex justify-center space-x-4 mb-4">
-                    <div aria-label={`First die shows ${diceRoll[0]}`}>
-                      {getDiceIcon(diceRoll[0])}
-                    </div>
-                    <div aria-label={`Second die shows ${diceRoll[1]}`}>
-                      {getDiceIcon(diceRoll[1])}
-                    </div>
-                  </div>
-                  <p 
-                    className="text-foreground font-bold text-xl"
-                    aria-label={`Total sum is ${diceRoll[0] + diceRoll[1]}`}
-                  >
-                    Tổng: {diceRoll[0] + diceRoll[1]}
-                  </p>
-                </div>
-                
-                <div className="space-y-3">
-                  <label className="text-muted-foreground text-sm" htmlFor="bet-amount-slider">
-                    Số tiền cược:
-                  </label>
+                 <CardTitle className="text-foreground flex items-center justify-center">
+                   <Dice6 className="w-6 h-6 mr-2 text-destructive" aria-hidden="true" />
+                   Mini Dice Game
+                 </CardTitle>
+               </CardHeader>
+               <CardContent className="space-y-6">
+                 <div className="text-center" role="region" aria-live="polite" aria-label="Dice game results">
+                   <div className="flex justify-center space-x-4 mb-4">
+                     <div aria-label={`First die shows ${diceRoll[0]}`}>
+                       {getDiceIcon(diceRoll[0])}
+                     </div>
+                     <div aria-label={`Second die shows ${diceRoll[1]}`}>
+                       {getDiceIcon(diceRoll[1])}
+                     </div>
+                   </div>
+                   <p
+                     className="text-foreground font-bold text-xl"
+                     aria-label={`Total sum is ${diceRoll[0] + diceRoll[1]}`}
+                   >
+                     Total: {diceRoll[0] + diceRoll[1]}
+                   </p>
+                 </div>
+
+                 <div className="space-y-3">
+                   <label className="text-muted-foreground text-sm" htmlFor="bet-amount-slider">
+                     Bet Amount:
+                   </label>
                   <Slider
                     id="bet-amount-slider"
                     value={betAmount}
@@ -625,31 +625,31 @@ const CasinoGames = () => {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-3">
-                  <Button 
-                    variant="outline" 
-                    className="border-success text-success hover:bg-success hover:text-success-foreground"
-                    aria-label="Bet on even numbers"
-                  >
-                    Cược Chẵn
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    className="border-destructive text-destructive hover:bg-destructive hover:text-destructive-foreground"
-                    aria-label="Bet on odd numbers"
-                  >
-                    Cược Lẻ
-                  </Button>
-                </div>
-                
-                <Button 
-                  onClick={rollDice} 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  aria-label="Roll the dice"
-                >
-                  <Dice6 className="w-4 h-4 mr-2" aria-hidden="true" />
-                  Tung Xúc Xắc
-                </Button>
+                 <div className="grid grid-cols-2 gap-3">
+                   <Button
+                     variant="outline"
+                     className="border-success text-success hover:bg-success hover:text-success-foreground"
+                     aria-label="Bet on even numbers"
+                   >
+                     Bet Even
+                   </Button>
+                   <Button
+                     variant="outline"
+                     className="border-destructive text-destructive hover:bg-destructive hover:text-destructive-foreground"
+                     aria-label="Bet on odd numbers"
+                   >
+                     Bet Odd
+                   </Button>
+                 </div>
+
+                 <Button
+                   onClick={rollDice}
+                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                   aria-label="Roll the dice"
+                 >
+                   <Dice6 className="w-4 h-4 mr-2" aria-hidden="true" />
+                   Roll Dice
+                 </Button>
               </CardContent>
             </Card>
           </TabsContent>
@@ -672,19 +672,19 @@ const CasinoGames = () => {
                   <AccordionContent className="text-muted-foreground pt-4">
                     <div className="space-y-4">
                       <p className="text-foreground">{promo.content}</p>
-                      <details className="text-sm">
-                        <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
-                          Điều khoản và điều kiện
-                        </summary>
-                        <p className="mt-2 text-muted-foreground">{promo.terms}</p>
-                      </details>
-                      <Button 
-                        className="bg-accent hover:bg-accent/90 text-accent-foreground"
-                        aria-label={`Claim ${promo.title.replace(/[🎁💎🔥🎰]/g, '').trim()}`}
-                      >
-                        <Gift className="w-4 h-4 mr-2" aria-hidden="true" />
-                        Nhận Ngay
-                      </Button>
+                       <details className="text-sm">
+                         <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
+                           Terms and Conditions
+                         </summary>
+                         <p className="mt-2 text-muted-foreground">{promo.terms}</p>
+                       </details>
+                       <Button
+                         className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                         aria-label={`Claim ${promo.title.replace(/[🎁💎🔥🎰]/g, '').trim()}`}
+                       >
+                         <Gift className="w-4 h-4 mr-2" aria-hidden="true" />
+                         Claim Now
+                       </Button>
                     </div>
                   </AccordionContent>
                 </AccordionItem>

@@ -12,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
         '/*.json$',
       ],
     },
-    sitemap: 'https://vertexone.vn/sitemap.xml',
-    host: 'https://vertexone.vn',
+    sitemap: 'https://vertex-one-sandy.vercel.app//sitemap.xml',
+    host: 'https://vertex-one-sandy.vercel.app/',
   }
 }

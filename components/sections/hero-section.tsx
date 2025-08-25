@@ -51,30 +51,30 @@ const HeroSection = () => {
   const heroSlides = [
     {
       id: 'welcome-slide',
-      title: "Chào Mừng Đến Với Thế Giới Cá Cược Hàng Đầu",
-      subtitle: "Trải nghiệm cá cược thể thao và casino đỉnh cao với tỷ lệ cược tốt nhất",
+      title: "Welcome to the Premier Betting World",
+      subtitle: "Experience top-tier sports betting and casino with the best odds",
       icon: Crown,
       bonus: "200%",
-      cta: "Đăng Ký Ngay",
-      ctaSecondary: "Xem Tỷ Số Live"
+      cta: "Register Now",
+      ctaSecondary: "View Live Scores"
     },
     {
       id: 'casino-slide',
-      title: "Sòng Bạc Trực Tiếp Chất Lượng Cao",
-      subtitle: "Dealers chuyên nghiệp, trải nghiệm như tại Las Vegas",
+      title: "High-Quality Live Casino",
+      subtitle: "Professional dealers, experience like in Las Vegas",
       icon: Sparkles,
       bonus: "150%",
-      cta: "Vào Casino",
-      ctaSecondary: "Xem Game"
+      cta: "Enter Casino",
+      ctaSecondary: "View Games"
     },
     {
       id: 'slots-slide',
-      title: "Máy Slot Hiện Đại Với Jackpot Khủng",
-      subtitle: "Hàng nghìn game slot với jackpot lên đến hàng tỷ đồng",
+      title: "Modern Slot Machines With Huge Jackpots",
+      subtitle: "Thousands of slot games with jackpots up to billions",
       icon: Zap,
       bonus: "300%",
-      cta: "Chơi Slot",
-      ctaSecondary: "Xem Jackpot"
+      cta: "Play Slots",
+      ctaSecondary: "View Jackpot"
     }
   ];
 
@@ -87,62 +87,62 @@ const HeroSection = () => {
   }, [heroSlides.length]);
 
   const features = [
-    { icon: Shield, title: "Bảo Mật Tuyệt Đối", desc: "SSL 256-bit Encryption", color: "text-success" },
-    { icon: Flame, title: "Tỷ Lệ Cược Cao", desc: "Lên đến 98.5% RTP", color: "text-destructive" },
-    { icon: Rocket, title: "Rút Tiền Nhanh", desc: "Trong vòng 5 phút", color: "text-primary" },
-    { icon: Heart, title: "Hỗ Trợ 24/7", desc: "Luôn sẵn sàng phục vụ", color: "text-accent" }
+    { icon: Shield, title: "Absolute Security", desc: "SSL 256-bit Encryption", color: "text-success" },
+    { icon: Flame, title: "High Odds", desc: "Up to 98.5% RTP", color: "text-destructive" },
+    { icon: Rocket, title: "Fast Withdrawal", desc: "Within 5 minutes", color: "text-primary" },
+    { icon: Heart, title: "24/7 Support", desc: "Always ready to serve", color: "text-accent" }
   ];
 
   const liveStats = [
-    { 
-      label: "Người chơi trực tuyến", 
-      value: userCount.toLocaleString(), 
-      icon: Users, 
+    {
+      label: "Online Players",
+      value: userCount.toLocaleString(),
+      icon: Users,
       trend: "+12%",
-      ariaLabel: `${userCount.toLocaleString()} người chơi đang trực tuyến, tăng 12%`
+      ariaLabel: `${userCount.toLocaleString()} players online, increased by 12%`
     },
-    { 
-      label: "Tổng giải thưởng hôm nay", 
-      value: "₫2.4B", 
-      icon: DollarSign, 
+    {
+      label: "Today's Total Prizes",
+      value: "₫2.4B",
+      icon: DollarSign,
       trend: "+25%",
-      ariaLabel: "Tổng giải thưởng hôm nay 2.4 tỷ đồng, tăng 25%"
+      ariaLabel: "Today's total prizes 2.4 billion VND, increased by 25%"
     },
-    { 
-      label: "Trận đấu đang diễn ra", 
-      value: "147", 
-      icon: Trophy, 
+    {
+      label: "Matches in Progress",
+      value: "147",
+      icon: Trophy,
       trend: "+5%",
-      ariaLabel: "147 trận đấu đang diễn ra, tăng 5%"
+      ariaLabel: "147 matches currently in progress, increased by 5%"
     },
-    { 
-      label: "Jackpot hiện tại", 
-      value: "₫15.7B", 
-      icon: Target, 
+    {
+      label: "Current Jackpot",
+      value: "₫15.7B",
+      icon: Target,
       trend: "+3%",
-      ariaLabel: "Jackpot hiện tại 15.7 tỷ đồng, tăng 3%"
+      ariaLabel: "Current jackpot 15.7 billion VND, increased by 3%"
     }
   ];
 
   const testimonials = [
-    { 
-      name: "Nguyễn Văn A", 
-      rating: 5, 
-      comment: "Tuyệt vời! Tỷ lệ cược cao và rút tiền nhanh chóng.", 
+    {
+      name: "Nguyen Van A",
+      rating: 5,
+      comment: "Excellent! High odds and fast withdrawals.",
       avatar: "NA",
       id: "review-1"
     },
-    { 
-      name: "Trần Thị B", 
-      rating: 5, 
-      comment: "Giao diện đẹp, dễ sử dụng. Hỗ trợ khách hàng rất tốt!", 
+    {
+      name: "Tran Thi B",
+      rating: 5,
+      comment: "Beautiful interface, easy to use. Great customer support!",
       avatar: "TB",
       id: "review-2"
     },
-    { 
-      name: "Lê Minh C", 
-      rating: 5, 
-      comment: "Đã thắng jackpot 50 triệu. Cảm ơn platform tuyệt vời này!", 
+    {
+      name: "Le Minh C",
+      rating: 5,
+      comment: "Won 50 million jackpot. Thanks to this amazing platform!",
       avatar: "LC",
       id: "review-3"
     }
@@ -152,12 +152,12 @@ const HeroSection = () => {
     sports: [
       { label: "⚽ Premier League - Liverpool vs Arsenal", href: "#match-1" },
       { label: "🏀 NBA Finals - Lakers vs Celtics", href: "#match-2" },
-      { label: "🎾 Wimbledon - Chung kết", href: "#match-3" }
+      { label: "🎾 Wimbledon - Final", href: "#match-3" }
     ],
     casino: [
       { label: "🎲 Baccarat VIP Room", href: "#casino-baccarat" },
       { label: "♠️ Blackjack Pro Table", href: "#casino-blackjack" },
-      { label: "🎰 Roulette Européen", href: "#casino-roulette" }
+      { label: "🎰 European Roulette", href: "#casino-roulette" }
     ],
     slots: [
       { label: "💎 Mega Fortune - Jackpot ₫2.1B", href: "#slot-mega" },
@@ -204,7 +204,7 @@ const HeroSection = () => {
                 aria-label={`Welcome bonus ${CurrentSlide.bonus} percent`}
               >
                 <Gift className="w-5 h-5 mr-2" aria-hidden="true" />
-                Thưởng Chào Mừng {CurrentSlide.bonus}%
+                Welcome Bonus {CurrentSlide.bonus}%
               </Badge>
               
               <div className="space-y-4">
@@ -251,7 +251,7 @@ const HeroSection = () => {
             <Card className="bg-card/80 border-border backdrop-blur-sm shadow-lg">
               <CardContent className="p-6">
                 <div className="flex justify-between items-center mb-3">
-                  <span className="text-card-foreground font-semibold">Mục tiêu Jackpot hôm nay</span>
+                  <span className="text-card-foreground font-semibold">Today&apos;s Jackpot Target</span>
                   <span className="text-accent font-bold">{progress}%</span>
                 </div>
                 <Progress 
@@ -289,7 +289,7 @@ const HeroSection = () => {
               <CardHeader>
                 <CardTitle className="text-card-foreground flex items-center text-xl">
                   <Flame className="w-6 h-6 mr-3 text-destructive" aria-hidden="true" />
-                  Thống Kê Trực Tiếp
+                  Live Statistics
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -320,9 +320,9 @@ const HeroSection = () => {
 
             {/* Customer Testimonials */}
             <Card className="bg-card/80 border-border/60 backdrop-blur-md shadow-xl">
-              <CardHeader>
-                <CardTitle className="text-card-foreground text-xl">Khách Hàng Nói Gì</CardTitle>
-              </CardHeader>
+               <CardHeader>
+                 <CardTitle className="text-card-foreground text-xl">What Customers Say</CardTitle>
+               </CardHeader>
               <CardContent>
                 <Carousel className="w-full" aria-label="Customer testimonials">
                   <CarouselContent>
@@ -360,26 +360,26 @@ const HeroSection = () => {
             {/* Quick Actions Tabs */}
             <Card className="bg-card/80 border-border/60 backdrop-blur-md shadow-xl">
               <Tabs defaultValue="sports" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 bg-muted/40">
-                  <TabsTrigger 
-                    value="sports" 
-                    className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                  >
-                    Thể Thao
-                  </TabsTrigger>
-                  <TabsTrigger 
-                    value="casino"
-                    className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                  >
-                    Casino
-                  </TabsTrigger>
-                  <TabsTrigger 
-                    value="slots"
-                    className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                  >
-                    Slots
-                  </TabsTrigger>
-                </TabsList>
+                 <TabsList className="grid w-full grid-cols-3 bg-muted/40">
+                   <TabsTrigger
+                     value="sports"
+                     className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                   >
+                     Sports
+                   </TabsTrigger>
+                   <TabsTrigger
+                     value="casino"
+                     className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                   >
+                     Casino
+                   </TabsTrigger>
+                   <TabsTrigger
+                     value="slots"
+                     className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                   >
+                     Slots
+                   </TabsTrigger>
+                 </TabsList>
                 
                 <TabsContent value="sports" className="p-4 space-y-2">
                   {quickActions.sports.map((action, index) => (

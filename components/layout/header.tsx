@@ -38,48 +38,48 @@ const Header = () => {
   ];
 
   const mainNavItems = [
-    { 
-      icon: TrendingUp, 
-      label: 'Cá Cược Thể Thao', 
-      href: '#sports', 
+    {
+      icon: TrendingUp,
+      label: 'Sports Betting',
+      href: '#sports',
       active: true,
-      description: 'Cá cược thể thao với tỷ lệ tốt nhất'
+      description: 'Sports betting with the best odds'
     },
-    { 
-      icon: Trophy, 
-      label: 'Tỷ Số Trực Tuyến', 
+    {
+      icon: Trophy,
+      label: 'Live Scores',
       href: '#livescore',
-      description: 'Theo dõi tỷ số trực tiếp các trận đấu'
+      description: 'Track live scores of matches'
     },
-    { 
-      icon: Gamepad2, 
-      label: 'Sòng Bạc Trực Tiếp', 
+    {
+      icon: Gamepad2,
+      label: 'Live Casino',
       href: '#casino',
-      description: 'Casino trực tuyến với dealer thực'
+      description: 'Online casino with real dealers'
     },
-    { 
-      icon: Dice6, 
-      label: 'Máy Xèng', 
+    {
+      icon: Dice6,
+      label: 'Slot Machines',
       href: '#slots',
-      description: 'Hàng nghìn game slot với jackpot khủng'
+      description: 'Thousands of slot games with huge jackpots'
     },
   ];
 
   const sportsItems = [
-    { icon: '⚽', label: 'Bóng Đá', href: '#football' },
-    { icon: '🎾', label: 'Quần Vợt', href: '#tennis' },
-    { icon: '⚾', label: 'Bóng Chày', href: '#baseball' },
-    { icon: '🏈', label: 'Bóng Bầu Dục Mỹ', href: '#american-football' },
-    { icon: '🥊', label: 'Quyền Anh', href: '#boxing' },
+    { icon: '⚽', label: 'Football', href: '#football' },
+    { icon: '🎾', label: 'Tennis', href: '#tennis' },
+    { icon: '⚾', label: 'Baseball', href: '#american-football' },
+    { icon: '🏈', label: 'American Football', href: '#american-football' },
+    { icon: '🥊', label: 'Boxing', href: '#boxing' },
     { icon: '🥋', label: 'MMA', href: '#mma' },
     { icon: '🏉', label: 'Rugby', href: '#rugby' },
-    { icon: '🏒', label: 'Khúc Côn Cầu', href: '#hockey' },
+    { icon: '🏒', label: 'Hockey', href: '#hockey' },
     { icon: '🎱', label: 'Snooker', href: '#snooker' },
-    { icon: '🏸', label: 'Cầu Lông', href: '#badminton' },
+    { icon: '🏸', label: 'Badminton', href: '#badminton' },
     { icon: '🏏', label: 'Cricket', href: '#cricket' },
-    { icon: '🤾', label: 'Bóng ném', href: '#handball' },
-    { icon: '🏀', label: 'Bóng Rổ', href: '#basketball' },
-    { icon: '🏐', label: 'Bóng Chuyền', href: '#volleyball' },
+    { icon: '🤾', label: 'Handball', href: '#handball' },
+    { icon: '🏀', label: 'Basketball', href: '#basketball' },
+    { icon: '🏐', label: 'Volleyball', href: '#volleyball' },
   ];
 
   const themeOptions = [
@@ -190,12 +190,12 @@ const Header = () => {
             </DropdownMenu>
 
             {/* Login Button */}
-            <Button 
+            <Button
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
               aria-label="Login to your account"
             >
               <LogIn className="h-4 w-4 mr-2" aria-hidden="true" />
-              Đăng Nhập
+              Login
             </Button>
 
             {/* Mobile Menu */}
@@ -243,11 +243,11 @@ const Header = () => {
                     </div>
                     
                     <Separator className="bg-border" />
-                    
+
                     {/* Mobile Sports Menu */}
                     <div className="px-3 py-2">
                       <h3 className="mb-2 text-sm font-semibold text-muted-foreground">
-                        Thể Thao
+                        Sports
                       </h3>
                       <div className="grid grid-cols-2 gap-2 max-h-40 overflow-y-auto">
                         {sportsItems.map((sport, index) => (

@@ -28,23 +28,23 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const footerLinks = {
-    "Về Vertex One": [
-      "Giới Thiệu",
-      "Vertex One Đăng Nhập",
-      "Liên Hệ",
-      "Tuyển Dụng"
+    "About Vertex One": [
+      "About Us",
+      "Login",
+      "Contact",
+      "Careers"
     ],
-    "Cá Cược Thể Thao": [
-      "Giải Ngoại Hạng Anh (EPL)",
-      "Giải Bóng Đá Nhà Nghề Mỹ (MLS)",
-      "Bundesliga Đức",
-      "Serie A Ý",
-      "La Liga Tây Ban Nha",
-      "Ligue 1 Pháp",
+    "Sports Betting": [
+      "Premier League (EPL)",
+      "MLS",
+      "Bundesliga",
+      "Serie A",
+      "La Liga",
+      "Ligue 1",
       "Champions League",
       "World Cup"
     ],
-    "Sòng Bạc Trực Tuyến": [
+    "Live Casino": [
       "Baccarat",
       "Blackjack",
       "Roulette",
@@ -52,11 +52,11 @@ const Footer = () => {
       "Slot Games",
       "Live Casino"
     ],
-    "Hỗ Trợ": [
-      "Trung Tâm Trợ Giúp",
-      "Câu Hỏi Thường Gặp",
-      "Hướng Dẫn",
-      "Liên Hệ Hỗ Trợ"
+    "Support": [
+      "Help Center",
+      "FAQ",
+      "Guides",
+      "Contact Support"
     ]
   };
 
@@ -75,10 +75,10 @@ const Footer = () => {
   ];
 
   const features = [
-    { icon: Shield, text: "Bảo Mật SSL 256-bit" },
-    { icon: Clock, text: "Hỗ Trợ 24/7" },
-    { icon: Zap, text: "Rút Tiền Nhanh 5 Phút" },
-    { icon: Award, text: "Được Cấp Phép Hợp Pháp" }
+    { icon: Shield, text: "SSL 256-bit Security" },
+    { icon: Clock, text: "24/7 Support" },
+    { icon: Zap, text: "Fast Withdrawal 5 Minutes" },
+    { icon: Award, text: "Legally Licensed" }
   ];
 
   return (
@@ -100,10 +100,10 @@ const Footer = () => {
               </div>
             </div>
             
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Trải nghiệm cá cược thể thao và casino đẳng cấp thế giới với 
-              tỷ lệ cược tốt nhất, bảo mật tuyệt đối và dịch vụ khách hàng xuất sắc.
-            </p>
+             <p className="text-gray-300 text-sm leading-relaxed">
+               Experience world-class sports betting and casino with
+               the best odds, absolute security and excellent customer service.
+             </p>
             
             {/* Features */}
             <div className="space-y-2">
@@ -154,9 +154,9 @@ const Footer = () => {
 
         {/* Licenses Section */}
         <div className="space-y-6">
-          <h3 className="text-center font-bold text-lg text-yellow-400">
-            Giấy Phép & Chứng Nhận
-          </h3>
+           <h3 className="text-center font-bold text-lg text-yellow-400">
+             Licenses & Certifications
+           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {licenses.map((license, index) => (
               <Card key={index} className="bg-white/10 border-white/20 backdrop-blur-sm">
@@ -175,7 +175,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-bold text-lg text-yellow-400">Liên Hệ</h3>
+             <h3 className="font-bold text-lg text-yellow-400">Contact</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-green-400" />
@@ -191,27 +191,27 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Globe className="w-5 h-5 text-purple-400" />
-                <span className="text-gray-300">www.vertexone.vn</span>
+                <span className="text-gray-300">https://vertex-one-sandy.vercel.app/</span>
               </div>
             </div>
           </div>
 
           {/* Live Stats */}
           <div className="space-y-4">
-            <h3 className="font-bold text-lg text-yellow-400">Thống Kê Trực Tuyến</h3>
+             <h3 className="font-bold text-lg text-yellow-400">Live Statistics</h3>
             <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
                 <CardContent className="p-4 text-center">
                   <Users className="w-6 h-6 mx-auto mb-2 text-blue-400" />
                   <p className="text-xl font-bold">24,857</p>
-                  <p className="text-xs text-gray-400">Người chơi online</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
-                <CardContent className="p-4 text-center">
-                  <Star className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
-                  <p className="text-xl font-bold">4.9</p>
-                  <p className="text-xs text-gray-400">Đánh giá trung bình</p>
+                   <p className="text-xs text-gray-400">Online Players</p>
+                 </CardContent>
+               </Card>
+               <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
+                 <CardContent className="p-4 text-center">
+                   <Star className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
+                   <p className="text-xl font-bold">4.9</p>
+                   <p className="text-xs text-gray-400">Average Rating</p>
                 </CardContent>
               </Card>
             </div>
@@ -222,28 +222,28 @@ const Footer = () => {
 
         {/* About Section */}
         <div className="text-center space-y-4">
-          <h3 className="font-bold text-lg text-yellow-400">Về Vertex One Gaming</h3>
-          <p className="text-gray-300 text-sm max-w-4xl mx-auto leading-relaxed">
-            Vertex One được thành lập vào năm 2024 với sứ mệnh mang đến trải nghiệm cá cược 
-            tuyệt vời nhất cho người chơi Việt Nam. Chúng tôi cung cấp đa dạng các sản phẩm 
-            cá cược thể thao, casino trực tuyến, và slot games với tỷ lệ cược cạnh tranh nhất thị trường. 
-            Với đội ngũ chuyên gia giàu kinh nghiệm và hệ thống công nghệ hiện đại, 
-            Vertex One cam kết mang đến môi trường cá cược an toàn, minh bạch và thú vị.
-          </p>
+           <h3 className="font-bold text-lg text-yellow-400">About Vertex One Gaming</h3>
+           <p className="text-gray-300 text-sm max-w-4xl mx-auto leading-relaxed">
+             Vertex One was founded in 2024 with the mission to bring the best betting
+             experience to players. We provide a wide range of sports betting,
+             online casino, and slot games with the most competitive odds in the market.
+             With our experienced team and modern technology system,
+             Vertex One is committed to providing a safe, transparent and exciting betting environment.
+           </p>
           
           <div className="flex justify-center space-x-6">
-            <Badge className="bg-green-500">
-              <Shield className="w-3 h-3 mr-1" />
-              An Toàn 100%
-            </Badge>
-            <Badge className="bg-blue-500">
-              <Award className="w-3 h-3 mr-1" />  
-              Được Cấp Phép
-            </Badge>
-            <Badge className="bg-purple-500">
-              <Heart className="w-3 h-3 mr-1" />
-              Đáng Tin Cậy
-            </Badge>
+             <Badge className="bg-green-500">
+               <Shield className="w-3 h-3 mr-1" />
+               100% Safe
+             </Badge>
+             <Badge className="bg-blue-500">
+               <Award className="w-3 h-3 mr-1" />
+               Licensed
+             </Badge>
+             <Badge className="bg-purple-500">
+               <Heart className="w-3 h-3 mr-1" />
+               Trusted
+             </Badge>
           </div>
         </div>
       </div>
@@ -252,15 +252,15 @@ const Footer = () => {
       <div className="bg-black/30 py-6">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm text-center md:text-left">
-              © {currentYear} Vertex One. Bảo lưu mọi quyền. 
-              <span className="mx-2">•</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors">Điều Khoản Sử Dụng</a>
-              <span className="mx-2">•</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors">Chính Sách Bảo Mật</a>
-              <span className="mx-2">•</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors">Cờ Bạc Có Trách Nhiệm</a>
-            </p>
+             <p className="text-gray-400 text-sm text-center md:text-left">
+               © {currentYear} Vertex One. All rights reserved.
+               <span className="mx-2">•</span>
+               <a href="#" className="hover:text-yellow-400 transition-colors">Terms of Use</a>
+               <span className="mx-2">•</span>
+               <a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a>
+               <span className="mx-2">•</span>
+               <a href="#" className="hover:text-yellow-400 transition-colors">Responsible Gaming</a>
+             </p>
             
             <div className="flex items-center space-x-2">
               <div className="w-6 h-4 bg-red-500 rounded-sm"></div>

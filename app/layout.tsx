@@ -11,25 +11,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vertexone.vn'),
+  metadataBase: new URL('https://vertex-one-sandy.vercel.app/'),
   title: {
-    default: "Vertex One - Premium Gaming Platform | Cá Cược Thể Thao & Casino Trực Tuyến",
+    default: "Vertex One - Premium Gaming Platform | Sports Betting & Live Casino",
     template: "%s | Vertex One"
   },
-  description: "Trải nghiệm cá cược thể thao và casino đẳng cấp thế giới tại Vertex One. Tỷ lệ cược tốt nhất, bảo mật tuyệt đối, hỗ trợ 24/7. Đăng ký ngay nhận thưởng 200%!",
+  description: "Experience world-class sports betting and casino at Vertex One. Best odds, absolute security, 24/7 support. Register now to get 200% bonus!",
   keywords: [
-    "cá cược thể thao",
-    "casino trực tuyến", 
-    "sòng bạc online",
-    "tỷ lệ cược",
-    "bóng đá",
+    "sports betting",
+    "online casino",
+    "live casino",
+    "betting odds",
+    "football",
     "slot games",
     "baccarat",
     "blackjack",
     "roulette",
     "vertex one",
-    "cá cược an toàn",
-    "thưởng chào mừng"
+    "safe betting",
+    "welcome bonus"
   ],
   authors: [{ name: "Vertex One Team" }],
   creator: "Vertex One",
@@ -48,10 +48,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    url: "https://vertexone.vn",
+    url: "https://vertex-one-sandy.vercel.app/",
     siteName: "Vertex One",
     title: "Vertex One - Premium Gaming Platform",
-    description: "Trải nghiệm cá cược thể thao và casino đẳng cấp thế giới tại Vertex One. Tỷ lệ cược tốt nhất, bảo mật tuyệt đối, hỗ trợ 24/7.",
+    description: "Experience world-class sports betting and casino at Vertex One. Best odds, absolute security, 24/7 support.",
     images: [
       {
         url: "/og-image.jpg",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Vertex One - Premium Gaming Platform",
-    description: "Trải nghiệm cá cược thể thao và casino đẳng cấp thế giới. Đăng ký ngay nhận thưởng 200%!",
+    description: "Experience world-class sports betting and casino. Register now to get 200% bonus!",
     images: ["/twitter-image.jpg"],
     creator: "@vertexone_vn",
   },
@@ -73,11 +73,11 @@ export const metadata: Metadata = {
     yandex: "your-yandex-verification-code",
   },
   alternates: {
-    canonical: "https://vertexone.vn",
+    canonical: "https://vertex-one-sandy.vercel.app/",
     languages: {
-      'vi': 'https://vertexone.vn/vi',
-      'en': 'https://vertexone.vn/en',
-      'th': 'https://vertexone.vn/th',
+      'vi': 'https://vertex-one-sandy.vercel.app//vi',
+      'en': 'https://vertex-one-sandy.vercel.app//en',
+      'th': 'https://vertex-one-sandy.vercel.app//th',
     }
   },
   other: {
@@ -112,9 +112,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Vertex One",
-              "description": "Premium Gaming Platform - Cá Cược Thể Thao & Casino Trực Tuyến",
-              "url": "https://vertexone.vn",
-              "logo": "https://vertexone.vn/logo.png",
+              "description": "Premium Gaming Platform - Sports Betting & Live Casino",
+              "url": "https://vertex-one-sandy.vercel.app/",
+              "logo": "https://vertex-one-sandy.vercel.app//logo.png",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+84-927-363-782",

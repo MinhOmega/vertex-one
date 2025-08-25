@@ -141,10 +141,10 @@ const LiveMatches = () => {
   ];
 
   const sports = [
-    { name: 'Bóng Đá', icon: '⚽', count: 47, active: true },
-    { name: 'Bóng Rổ', icon: '🏀', count: 23 },
+    { name: 'Football', icon: '⚽', count: 47, active: true },
+    { name: 'Basketball', icon: '🏀', count: 23 },
     { name: 'Tennis', icon: '🎾', count: 18 },
-    { name: 'Bóng Chày', icon: '⚾', count: 12 },
+    { name: 'Baseball', icon: '⚾', count: 12 },
     { name: 'Hockey', icon: '🏒', count: 8 },
     { name: 'Boxing', icon: '🥊', count: 5 }
   ];
@@ -168,11 +168,11 @@ const LiveMatches = () => {
           <div className="flex items-center justify-center mb-4">
             <Trophy className="w-12 h-12 text-yellow-500 mr-4" />
             <h2 className="text-4xl font-bold text-gray-800">
-              Trận Đấu Trực Tiếp
+              Live Matches
             </h2>
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Theo dõi và đặt cược trực tiếp trên các trận đấu hấp dẫn nhất thế giới
+            Watch and bet live on the most exciting matches around the world
           </p>
           
           {/* Sports Gallery */}
@@ -213,7 +213,7 @@ const LiveMatches = () => {
                 <div className="text-2xl mb-2">{sport.icon}</div>
                 <h3 className="font-semibold text-sm">{sport.name}</h3>
                 <Badge variant="secondary" className="mt-2">
-                  {sport.count} trận
+                  {sport.count} matches
                 </Badge>
               </CardContent>
             </Card>
@@ -225,17 +225,17 @@ const LiveMatches = () => {
           <TabsList className="grid w-full grid-cols-4 bg-white">
             <TabsTrigger value="live" className="flex items-center space-x-2">
               <Play className="w-4 h-4" />
-              <span>Trực Tiếp</span>
+              <span>Live</span>
               <Badge className="bg-red-500">6</Badge>
             </TabsTrigger>
             <TabsTrigger value="today" className="flex items-center space-x-2">
               <Clock className="w-4 h-4" />
-              <span>Hôm Nay</span>
+              <span>Today</span>
               <Badge variant="secondary">168</Badge>
             </TabsTrigger>
             <TabsTrigger value="early" className="flex items-center space-x-2">
               <Globe className="w-4 h-4" />
-              <span>Sớm</span>
+              <span>Early</span>
               <Badge variant="secondary">484</Badge>
             </TabsTrigger>
             <TabsTrigger value="boost" className="flex items-center space-x-2">
@@ -249,9 +249,9 @@ const LiveMatches = () => {
           <TabsContent value="live" className="space-y-6">
             <Alert className="bg-red-50 border-red-200">
               <Activity className="h-4 w-4 text-red-600" />
-              <AlertTitle className="text-red-800">Trực Tiếp</AlertTitle>
+              <AlertTitle className="text-red-800">Live</AlertTitle>
               <AlertDescription className="text-red-700">
-                {liveMatches.length} trận đấu đang diễn ra. Tỷ lệ cược thay đổi liên tục!
+                {liveMatches.length} matches currently in progress. Odds change constantly!
               </AlertDescription>
             </Alert>
 
@@ -321,36 +321,36 @@ const LiveMatches = () => {
 
                       {/* Betting Odds */}
                       <div className="space-y-3">
-                        <h4 className="font-semibold text-center mb-3">Tỷ Lệ Cược</h4>
+                        <h4 className="font-semibold text-center mb-3">Betting Odds</h4>
                         <div className="grid grid-cols-3 gap-2">
-                          <Button 
+                          <Button
                             variant="outline"
                             className="flex flex-col h-16 hover:bg-blue-50"
                             onClick={() => handleBetClick(match, 'home')}
                           >
-                            <span className="text-xs text-gray-500">Chủ</span>
+                            <span className="text-xs text-gray-500">Home</span>
                             <span className="font-bold text-lg">{formatOdds(match.odds.home)}</span>
                           </Button>
-                          <Button 
+                          <Button
                             variant="outline"
                             className="flex flex-col h-16 hover:bg-gray-50"
                             onClick={() => handleBetClick(match, 'draw')}
                           >
-                            <span className="text-xs text-gray-500">Hòa</span>
+                            <span className="text-xs text-gray-500">Draw</span>
                             <span className="font-bold text-lg">{formatOdds(match.odds.draw)}</span>
                           </Button>
-                          <Button 
+                          <Button
                             variant="outline"
                             className="flex flex-col h-16 hover:bg-red-50"
                             onClick={() => handleBetClick(match, 'away')}
                           >
-                            <span className="text-xs text-gray-500">Khách</span>
+                            <span className="text-xs text-gray-500">Away</span>
                             <span className="font-bold text-lg">{formatOdds(match.odds.away)}</span>
                           </Button>
                         </div>
                         <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                           <BarChart3 className="w-4 h-4 mr-2" />
-                          Xem Thêm Kèo
+                          View More Odds
                         </Button>
                       </div>
                     </div>
@@ -382,7 +382,7 @@ const LiveMatches = () => {
                         </div>
                         <Progress value={match.popularity} className="mt-2" />
                         <div className="text-xs text-gray-500 mt-1">
-                          Độ phổ biến: {match.popularity}%
+                          Popularity: {match.popularity}%
                         </div>
                       </div>
                       
@@ -406,23 +406,23 @@ const LiveMatches = () => {
 
           {/* Bet Boost */}
           <TabsContent value="boost" className="space-y-6">
-            <Alert className="bg-yellow-50 border-yellow-200">
-              <Star className="h-4 w-4 text-yellow-600" />
-              <AlertTitle className="text-yellow-800">Bet Boost</AlertTitle>
-              <AlertDescription className="text-yellow-700">
-                Tỷ lệ cược được tăng cường đặc biệt cho các combo bet hấp dẫn!
+            <Alert className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/20 dark:to-orange-950/20 border-amber-200 dark:border-amber-800/30 shadow-sm">
+              <Star className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+              <AlertTitle className="text-amber-900 dark:text-amber-100 font-semibold">Bet Boost</AlertTitle>
+              <AlertDescription className="text-amber-800 dark:text-amber-200">
+                Specially enhanced odds for attractive combo bets!
               </AlertDescription>
             </Alert>
 
             {betBoostMatches.map((boost, index) => (
-              <Card key={index} className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-300">
-                <CardHeader>
+              <Card key={index} className="bg-gradient-to-br from-white to-amber-50/30 dark:from-gray-900 dark:to-amber-950/10 border-2 border-amber-200 dark:border-amber-800/30 shadow-xl">
+                <CardHeader className="bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 border-b border-amber-200 dark:border-amber-800/20">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="flex items-center">
-                      <Flame className="w-6 h-6 text-orange-500 mr-2" />
+                    <CardTitle className="flex items-center text-gray-900 dark:text-gray-100">
+                      <Flame className="w-6 h-6 text-amber-600 dark:text-amber-400 mr-2" />
                       Combo Bet Boost
                     </CardTitle>
-                    <Badge className="bg-yellow-500 text-black font-bold">
+                    <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold shadow-md border-0">
                       {boost.boost}
                     </Badge>
                   </div>
@@ -430,32 +430,32 @@ const LiveMatches = () => {
                 <CardContent className="space-y-4">
                   <div className="grid gap-3">
                     {boost.leagues.map((league, i) => (
-                      <div key={i} className="bg-white rounded p-3 border">
-                        <Badge variant="outline" className="mb-2">{league}</Badge>
-                        <p className="font-medium">{boost.matches[i]}</p>
+                      <div key={i} className="bg-white dark:bg-gray-800/50 rounded-lg p-3 border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <Badge variant="outline" className="mb-2 border-amber-300 text-amber-800 dark:border-amber-600 dark:text-amber-200 bg-amber-50 dark:bg-amber-950/30">{league}</Badge>
+                        <p className="font-medium text-gray-900 dark:text-gray-100">{boost.matches[i]}</p>
                       </div>
                     ))}
                   </div>
-                  
-                  <Separator />
-                  
-                  <div className="flex items-center justify-between bg-white rounded p-4">
+
+                  <Separator className="bg-gray-200 dark:bg-gray-700" />
+
+                  <div className="flex items-center justify-between bg-white dark:bg-gray-800/30 rounded-lg p-4 border border-gray-200 dark:border-gray-700 shadow-sm">
                     <div className="text-center">
-                      <p className="text-sm text-gray-500">Tỷ lệ thường</p>
-                      <p className="text-xl font-bold text-gray-800">{boost.regularOdds}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Regular Odds</p>
+                      <p className="text-xl font-bold text-gray-900 dark:text-gray-100">{boost.regularOdds}</p>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <TrendingUp className="w-8 h-8 text-green-500" />
+                      <TrendingUp className="w-8 h-8 text-green-600 dark:text-green-400" />
                     </div>
                     <div className="text-center">
-                      <p className="text-sm text-gray-500">Tỷ lệ Boost</p>
-                      <p className="text-xl font-bold text-green-600">{boost.boostedOdds}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Boosted Odds</p>
+                      <p className="text-xl font-bold text-amber-600 dark:text-amber-400">{boost.boostedOdds}</p>
                     </div>
                   </div>
-                  
-                  <Button className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black font-bold">
+
+                  <Button className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold shadow-lg transform hover:scale-[1.02] transition-all duration-200 border-0">
                     <Target className="w-4 h-4 mr-2" />
-                    Đặt Cược Boost
+                    Place Boost Bet
                   </Button>
                 </CardContent>
               </Card>
@@ -486,7 +486,7 @@ const LiveMatches = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Target className="w-5 h-5 mr-2 text-blue-600" />
-                Phiếu Cược Được Chọn
+                Selected Bet Slip
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -496,7 +496,7 @@ const LiveMatches = () => {
                     {selectedMatch.homeTeam} vs {selectedMatch.awayTeam}
                   </p>
                   <p className="text-sm text-gray-600">
-                    Loại cược: {selectedMatch.betType === 'home' ? 'Chủ nhà thắng' : selectedMatch.betType === 'draw' ? 'Hòa' : 'Khách thắng'}
+                    Bet Type: {selectedMatch.betType === 'home' ? 'Home Win' : selectedMatch.betType === 'draw' ? 'Draw' : 'Away Win'}
                   </p>
                 </div>
                 <div className="text-right">
@@ -504,7 +504,7 @@ const LiveMatches = () => {
                     {formatOdds(selectedMatch.odds[selectedMatch.betType])}
                   </p>
                   <Button size="sm" onClick={() => setSelectedMatch(null)}>
-                    Hủy
+                    Cancel
                   </Button>
                 </div>
               </div>
