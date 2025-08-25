@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -148,27 +149,34 @@ export default function RootLayout({
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       </head>
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
-        {/* Skip to main content for accessibility */}
-        <a 
-          href="#main-content" 
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-blue-600 text-white px-4 py-2 rounded z-50"
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
         >
-          Skip to main content
-        </a>
-        
-        {/* Main content wrapper */}
-        <div id="main-content" className="min-h-screen flex flex-col">
-          {children}
-        </div>
-        
-        {/* Toast notifications */}
-        <Toaster 
-          position="bottom-right"
-          toastOptions={{
-            duration: 4000,
-            className: "bg-white border shadow-lg",
-          }}
-        />
+          {/* Skip to main content for accessibility */}
+          <a 
+            href="#main-content" 
+            className="skip-link"
+          >
+            Skip to main content
+          </a>
+          
+          {/* Main content wrapper */}
+          <div id="main-content" className="min-h-screen flex flex-col">
+            {children}
+          </div>
+          
+          {/* Toast notifications */}
+          <Toaster 
+            position="bottom-right"
+            toastOptions={{
+              duration: 4000,
+              className: "bg-card text-card-foreground border border-border shadow-lg",
+            }}
+          />
+        </ThemeProvider>
         
         {/* Performance monitoring */}
         <script

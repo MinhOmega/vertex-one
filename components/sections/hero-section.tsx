@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -24,7 +23,8 @@ import {
   Target,
   Rocket,
   Heart,
-  Shield
+  Shield,
+  ArrowRight
 } from 'lucide-react';
 
 const HeroSection = () => {
@@ -50,146 +50,267 @@ const HeroSection = () => {
 
   const heroSlides = [
     {
+      id: 'welcome-slide',
       title: "Chào Mừng Đến Với Thế Giới Cá Cược Hàng Đầu",
       subtitle: "Trải nghiệm cá cược thể thao và casino đỉnh cao với tỷ lệ cược tốt nhất",
-      gradient: "from-pink-400 via-purple-500 to-blue-600",
       icon: Crown,
-      bonus: "200%"
+      bonus: "200%",
+      cta: "Đăng Ký Ngay",
+      ctaSecondary: "Xem Tỷ Số Live"
     },
     {
+      id: 'casino-slide',
       title: "Sòng Bạc Trực Tiếp Chất Lượng Cao",
       subtitle: "Dealers chuyên nghiệp, trải nghiệm như tại Las Vegas",
-      gradient: "from-emerald-400 via-cyan-500 to-blue-600",
       icon: Sparkles,
-      bonus: "150%"
+      bonus: "150%",
+      cta: "Vào Casino",
+      ctaSecondary: "Xem Game"
     },
     {
+      id: 'slots-slide',
       title: "Máy Slot Hiện Đại Với Jackpot Khủng",
       subtitle: "Hàng nghìn game slot với jackpot lên đến hàng tỷ đồng",
-      gradient: "from-yellow-400 via-orange-500 to-red-600",
       icon: Zap,
-      bonus: "300%"
+      bonus: "300%",
+      cta: "Chơi Slot",
+      ctaSecondary: "Xem Jackpot"
     }
   ];
 
+  // Auto slide effect
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % heroSlides.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
   const features = [
-    { icon: Shield, title: "Bảo Mật Tuyệt Đối", desc: "SSL 256-bit Encryption", color: "text-green-500" },
-    { icon: Flame, title: "Tỷ Lệ Cược Cao", desc: "Lên đến 98.5% RTP", color: "text-red-500" },
-    { icon: Rocket, title: "Rút Tiền Nhanh", desc: "Trong vòng 5 phút", color: "text-blue-500" },
-    { icon: Heart, title: "Hỗ Trợ 24/7", desc: "Luôn sẵn sàng phục vụ", color: "text-pink-500" }
+    { icon: Shield, title: "Bảo Mật Tuyệt Đối", desc: "SSL 256-bit Encryption", color: "text-success" },
+    { icon: Flame, title: "Tỷ Lệ Cược Cao", desc: "Lên đến 98.5% RTP", color: "text-destructive" },
+    { icon: Rocket, title: "Rút Tiền Nhanh", desc: "Trong vòng 5 phút", color: "text-primary" },
+    { icon: Heart, title: "Hỗ Trợ 24/7", desc: "Luôn sẵn sàng phục vụ", color: "text-accent" }
   ];
 
   const liveStats = [
-    { label: "Người chơi trực tuyến", value: userCount.toLocaleString(), icon: Users, trend: "+12%" },
-    { label: "Tổng giải thưởng hôm nay", value: "₫2.4B", icon: DollarSign, trend: "+25%" },
-    { label: "Trận đấu đang diễn ra", value: "147", icon: Trophy, trend: "+5%" },
-    { label: "Jackpot hiện tại", value: "₫15.7B", icon: Target, trend: "+3%" }
+    { 
+      label: "Người chơi trực tuyến", 
+      value: userCount.toLocaleString(), 
+      icon: Users, 
+      trend: "+12%",
+      ariaLabel: `${userCount.toLocaleString()} người chơi đang trực tuyến, tăng 12%`
+    },
+    { 
+      label: "Tổng giải thưởng hôm nay", 
+      value: "₫2.4B", 
+      icon: DollarSign, 
+      trend: "+25%",
+      ariaLabel: "Tổng giải thưởng hôm nay 2.4 tỷ đồng, tăng 25%"
+    },
+    { 
+      label: "Trận đấu đang diễn ra", 
+      value: "147", 
+      icon: Trophy, 
+      trend: "+5%",
+      ariaLabel: "147 trận đấu đang diễn ra, tăng 5%"
+    },
+    { 
+      label: "Jackpot hiện tại", 
+      value: "₫15.7B", 
+      icon: Target, 
+      trend: "+3%",
+      ariaLabel: "Jackpot hiện tại 15.7 tỷ đồng, tăng 3%"
+    }
   ];
+
+  const testimonials = [
+    { 
+      name: "Nguyễn Văn A", 
+      rating: 5, 
+      comment: "Tuyệt vời! Tỷ lệ cược cao và rút tiền nhanh chóng.", 
+      avatar: "NA",
+      id: "review-1"
+    },
+    { 
+      name: "Trần Thị B", 
+      rating: 5, 
+      comment: "Giao diện đẹp, dễ sử dụng. Hỗ trợ khách hàng rất tốt!", 
+      avatar: "TB",
+      id: "review-2"
+    },
+    { 
+      name: "Lê Minh C", 
+      rating: 5, 
+      comment: "Đã thắng jackpot 50 triệu. Cảm ơn platform tuyệt vời này!", 
+      avatar: "LC",
+      id: "review-3"
+    }
+  ];
+
+  const quickActions = {
+    sports: [
+      { label: "⚽ Premier League - Liverpool vs Arsenal", href: "#match-1" },
+      { label: "🏀 NBA Finals - Lakers vs Celtics", href: "#match-2" },
+      { label: "🎾 Wimbledon - Chung kết", href: "#match-3" }
+    ],
+    casino: [
+      { label: "🎲 Baccarat VIP Room", href: "#casino-baccarat" },
+      { label: "♠️ Blackjack Pro Table", href: "#casino-blackjack" },
+      { label: "🎰 Roulette Européen", href: "#casino-roulette" }
+    ],
+    slots: [
+      { label: "💎 Mega Fortune - Jackpot ₫2.1B", href: "#slot-mega" },
+      { label: "🌟 Starburst Deluxe", href: "#slot-starburst" },
+      { label: "🔥 Book of Ra Premium", href: "#slot-bookofra" }
+    ]
+  };
 
   const CurrentSlide = heroSlides[currentSlide];
 
   return (
-    <section className={`relative min-h-[80vh] bg-gradient-to-br ${CurrentSlide.gradient} overflow-hidden`}>
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-20">
+    <section 
+      className="relative min-h-[85vh] gaming-gradient overflow-hidden"
+      role="banner"
+      aria-labelledby="hero-title"
+    >
+      {/* Background Image with proper alt text */}
+      <div className="absolute inset-0 opacity-10 dark:opacity-20" aria-hidden="true">
         <Image
           src="/images/banners/hero-banner-1.webp"
-          alt="Gaming background"
+          alt=""
           fill
           className="object-cover"
           priority
+          sizes="100vw"
         />
       </div>
       
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-yellow-300/20 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-pink-300/15 rounded-full animate-pulse delay-300"></div>
-        <div className="absolute bottom-40 right-10 w-20 h-20 bg-blue-300/20 rounded-full animate-bounce delay-700"></div>
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-accent/10 rounded-full animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-primary/20 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-secondary/15 rounded-full animate-pulse delay-300"></div>
+        <div className="absolute bottom-40 right-10 w-20 h-20 bg-accent/20 rounded-full animate-bounce delay-700"></div>
       </div>
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Main Content */}
           <div className="space-y-8">
-            <div className="space-y-4">
-              <Badge className="bg-yellow-400 text-black font-bold text-lg px-4 py-2 animate-pulse">
-                <Gift className="w-5 h-5 mr-2" />
-                Thưởng Chào Mừng {CurrentSlide.bonus}
+            <div className="space-y-6">
+              <Badge 
+                className="bg-accent text-accent-foreground font-bold text-lg px-4 py-2 animate-pulse shadow-lg"
+                aria-label={`Welcome bonus ${CurrentSlide.bonus} percent`}
+              >
+                <Gift className="w-5 h-5 mr-2" aria-hidden="true" />
+                Thưởng Chào Mừng {CurrentSlide.bonus}%
               </Badge>
               
-              <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-                {CurrentSlide.title}
-                <CurrentSlide.icon className="inline-block w-16 h-16 ml-4 text-yellow-300 animate-spin" />
-              </h1>
-              
-              <p className="text-xl text-white/90 leading-relaxed">
-                {CurrentSlide.subtitle}
-              </p>
+              <div className="space-y-4">
+                <h1 
+                  id="hero-title"
+                  className="text-4xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight"
+                >
+                  {CurrentSlide.title}
+                  <CurrentSlide.icon 
+                    className="inline-block w-12 h-12 lg:w-16 lg:h-16 ml-4 text-accent animate-spin" 
+                    aria-hidden="true" 
+                  />
+                </h1>
+                
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                  {CurrentSlide.subtitle}
+                </p>
+              </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-lg px-8 py-4 transform hover:scale-105 transition-all duration-200">
-                <Star className="w-5 h-5 mr-2" />
-                Đăng Ký Ngay
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-8 py-4 transform hover:scale-105 transition-all duration-200 shadow-xl"
+                aria-label={`${CurrentSlide.cta} - Register now to get started`}
+              >
+                <Star className="w-5 h-5 mr-2" aria-hidden="true" />
+                {CurrentSlide.cta}
+                <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black font-bold text-lg px-8 py-4">
-                <TrendingUp className="w-5 h-5 mr-2" />
-                Xem Tỷ Số Live
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-foreground/20 text-foreground hover:bg-muted hover:text-accent-foreground font-bold text-lg px-8 py-4 backdrop-blur-sm"
+                aria-label={CurrentSlide.ctaSecondary}
+              >
+                <TrendingUp className="w-5 h-5 mr-2" aria-hidden="true" />
+                {CurrentSlide.ctaSecondary}
               </Button>
             </div>
 
             {/* Progress Bar */}
-            <Card className="bg-white/20 border-white/30 backdrop-blur-sm">
+            <Card className="bg-card/80 border-border backdrop-blur-sm shadow-lg">
               <CardContent className="p-6">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-white font-semibold">Mục tiêu Jackpot hôm nay</span>
-                  <span className="text-yellow-300 font-bold">{progress}%</span>
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-card-foreground font-semibold">Mục tiêu Jackpot hôm nay</span>
+                  <span className="text-accent font-bold">{progress}%</span>
                 </div>
-                <Progress value={progress} className="h-3 bg-white/20" />
-                <div className="mt-2 text-sm text-white/80">
+                <Progress 
+                  value={progress} 
+                  className="h-3"
+                  aria-label={`Jackpot progress: ${progress}%`}
+                />
+                <div className="mt-2 text-sm text-muted-foreground">
                   ₫{(15700000000 * progress / 100).toLocaleString()} / ₫15.7B
                 </div>
               </CardContent>
             </Card>
 
-            {/* Features */}
+            {/* Features Grid */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {features.map((feature, index) => (
-                <Card key={index} className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/20 transition-all duration-200 hover:scale-105">
+                <Card 
+                  key={index} 
+                  className="bg-card/60 border-border/60 backdrop-blur-sm hover:bg-card/80 transition-all duration-200 hover:scale-105 shadow-lg"
+                >
                   <CardContent className="p-4 text-center">
-                    <feature.icon className={`w-8 h-8 mx-auto mb-2 ${feature.color}`} />
-                    <h3 className="font-bold text-white text-sm">{feature.title}</h3>
-                    <p className="text-white/70 text-xs">{feature.desc}</p>
+                    <feature.icon className={`w-8 h-8 mx-auto mb-2 ${feature.color}`} aria-hidden="true" />
+                    <h3 className="font-bold text-card-foreground text-sm">{feature.title}</h3>
+                    <p className="text-muted-foreground text-xs">{feature.desc}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
 
-          {/* Right Side - Live Stats & Carousel */}
+          {/* Right Side - Live Stats & Interactive Content */}
           <div className="space-y-6">
             {/* Live Statistics */}
-            <Card className="bg-white/15 border-white/30 backdrop-blur-md">
+            <Card className="bg-card/80 border-border/60 backdrop-blur-md shadow-xl">
               <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Flame className="w-5 h-5 mr-2 text-red-400" />
+                <CardTitle className="text-card-foreground flex items-center text-xl">
+                  <Flame className="w-6 h-6 mr-3 text-destructive" aria-hidden="true" />
                   Thống Kê Trực Tiếp
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {liveStats.map((stat, index) => (
-                  <div key={index} className="flex items-center justify-between">
+                  <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-muted/20 hover:bg-muted/30 transition-colors">
                     <div className="flex items-center space-x-3">
-                      <stat.icon className="w-6 h-6 text-white" />
+                      <div className="p-2 rounded-full bg-primary/10">
+                        <stat.icon className="w-5 h-5 text-primary" aria-hidden="true" />
+                      </div>
                       <div>
-                        <p className="text-white font-semibold">{stat.value}</p>
-                        <p className="text-white/70 text-sm">{stat.label}</p>
+                        <p className="text-card-foreground font-bold text-lg" aria-label={stat.ariaLabel}>
+                          {stat.value}
+                        </p>
+                        <p className="text-muted-foreground text-sm">{stat.label}</p>
                       </div>
                     </div>
-                    <Badge variant="outline" className="text-green-400 border-green-400">
+                    <Badge 
+                      variant="outline" 
+                      className="text-success border-success/30 bg-success/10"
+                      aria-label={`Trending ${stat.trend}`}
+                    >
                       {stat.trend}
                     </Badge>
                   </div>
@@ -197,105 +318,127 @@ const HeroSection = () => {
               </CardContent>
             </Card>
 
-            {/* Testimonials Carousel */}
-            <Card className="bg-white/15 border-white/30 backdrop-blur-md">
+            {/* Customer Testimonials */}
+            <Card className="bg-card/80 border-border/60 backdrop-blur-md shadow-xl">
               <CardHeader>
-                <CardTitle className="text-white">Khách Hàng Nói Gì</CardTitle>
+                <CardTitle className="text-card-foreground text-xl">Khách Hàng Nói Gì</CardTitle>
               </CardHeader>
               <CardContent>
-                <Carousel className="w-full">
+                <Carousel className="w-full" aria-label="Customer testimonials">
                   <CarouselContent>
-                    {[
-                      { name: "Nguyễn Văn A", rating: 5, comment: "Tuyệt vời! Tỷ lệ cược cao và rút tiền nhanh chóng.", avatar: "NA" },
-                      { name: "Trần Thị B", rating: 5, comment: "Giao diện đẹp, dễ sử dụng. Hỗ trợ khách hàng rất tốt!", avatar: "TB" },
-                      { name: "Lê Minh C", rating: 5, comment: "Đã thắng jackpot 50 triệu. Cảm ơn platform tuyệt vời này!", avatar: "LC" }
-                    ].map((review, index) => (
-                      <CarouselItem key={index}>
-                        <div className="text-center space-y-4">
-                          <Avatar className="w-16 h-16 mx-auto border-2 border-yellow-400">
-                            <AvatarFallback className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold">
+                    {testimonials.map((review) => (
+                      <CarouselItem key={review.id}>
+                        <div className="text-center space-y-4 p-4">
+                          <Avatar className="w-16 h-16 mx-auto border-2 border-accent shadow-lg">
+                            <AvatarFallback className="bg-accent text-accent-foreground font-bold text-lg">
                               {review.avatar}
                             </AvatarFallback>
                           </Avatar>
                           <div>
-                            <div className="flex justify-center space-x-1 mb-2">
+                            <div className="flex justify-center space-x-1 mb-3" aria-label={`${review.rating} out of 5 stars`}>
                               {Array.from({ length: review.rating }).map((_, i) => (
-                                <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                                <Star key={i} className="w-4 h-4 text-accent fill-current" aria-hidden="true" />
                               ))}
                             </div>
-                            <p className="text-white text-sm italic">&quot;{review.comment}&quot;</p>
-                            <p className="text-white/70 font-semibold mt-2">- {review.name}</p>
+                            <blockquote className="text-card-foreground text-sm italic font-medium">
+                              &quot;{review.comment}&quot;
+                            </blockquote>
+                            <cite className="text-muted-foreground font-semibold mt-2 block">
+                              - {review.name}
+                            </cite>
                           </div>
                         </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className="text-white border-white hover:bg-white hover:text-black" />
-                  <CarouselNext className="text-white border-white hover:bg-white hover:text-black" />
+                  <CarouselPrevious className="text-foreground border-border hover:bg-muted" />
+                  <CarouselNext className="text-foreground border-border hover:bg-muted" />
                 </Carousel>
               </CardContent>
             </Card>
 
-            {/* Quick Actions */}
-            <Tabs defaultValue="sports" className="bg-white/15 border-white/30 backdrop-blur-md rounded-lg">
-              <TabsList className="grid w-full grid-cols-3 bg-white/10">
-                <TabsTrigger value="sports" className="text-white data-[state=active]:bg-white data-[state=active]:text-black">
-                  Thể Thao
-                </TabsTrigger>
-                <TabsTrigger value="casino" className="text-white data-[state=active]:bg-white data-[state=active]:text-black">
-                  Casino
-                </TabsTrigger>
-                <TabsTrigger value="slots" className="text-white data-[state=active]:bg-white data-[state=active]:text-black">
-                  Slots
-                </TabsTrigger>
-              </TabsList>
-              <TabsContent value="sports" className="p-4 space-y-3">
-                <Button variant="ghost" className="w-full justify-start text-white hover:bg-white hover:text-black">
-                  ⚽ Premier League - Liverpool vs Arsenal
-                </Button>
-                <Button variant="ghost" className="w-full justify-start text-white hover:bg-white hover:text-black">
-                  🏀 NBA Finals - Lakers vs Celtics  
-                </Button>
-                <Button variant="ghost" className="w-full justify-start text-white hover:bg-white hover:text-black">
-                  🎾 Wimbledon - Chung kết
-                </Button>
-              </TabsContent>
-              <TabsContent value="casino" className="p-4 space-y-3">
-                <Button variant="ghost" className="w-full justify-start text-white hover:bg-white hover:text-black">
-                  🎲 Baccarat VIP Room
-                </Button>
-                <Button variant="ghost" className="w-full justify-start text-white hover:bg-white hover:text-black">
-                  ♠️ Blackjack Pro Table
-                </Button>
-                <Button variant="ghost" className="w-full justify-start text-white hover:bg-white hover:text-black">
-                  🎰 Roulette Européen
-                </Button>
-              </TabsContent>
-              <TabsContent value="slots" className="p-4 space-y-3">
-                <Button variant="ghost" className="w-full justify-start text-white hover:bg-white hover:text-black">
-                  💎 Mega Fortune - Jackpot ₫2.1B
-                </Button>
-                <Button variant="ghost" className="w-full justify-start text-white hover:bg-white hover:text-black">
-                  🌟 Starburst Deluxe
-                </Button>
-                <Button variant="ghost" className="w-full justify-start text-white hover:bg-white hover:text-black">
-                  🔥 Book of Ra Premium
-                </Button>
-              </TabsContent>
-            </Tabs>
+            {/* Quick Actions Tabs */}
+            <Card className="bg-card/80 border-border/60 backdrop-blur-md shadow-xl">
+              <Tabs defaultValue="sports" className="w-full">
+                <TabsList className="grid w-full grid-cols-3 bg-muted/40">
+                  <TabsTrigger 
+                    value="sports" 
+                    className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  >
+                    Thể Thao
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="casino"
+                    className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  >
+                    Casino
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="slots"
+                    className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  >
+                    Slots
+                  </TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="sports" className="p-4 space-y-2">
+                  {quickActions.sports.map((action, index) => (
+                    <Button 
+                      key={index}
+                      variant="ghost" 
+                      className="w-full justify-start text-card-foreground hover:bg-muted hover:text-accent-foreground text-sm p-3 h-auto"
+                      aria-label={`View ${action.label.replace(/[⚽🏀🎾]/g, '').trim()}`}
+                    >
+                      {action.label}
+                    </Button>
+                  ))}
+                </TabsContent>
+                
+                <TabsContent value="casino" className="p-4 space-y-2">
+                  {quickActions.casino.map((action, index) => (
+                    <Button 
+                      key={index}
+                      variant="ghost" 
+                      className="w-full justify-start text-card-foreground hover:bg-muted hover:text-accent-foreground text-sm p-3 h-auto"
+                      aria-label={`Play ${action.label.replace(/[🎲♠️🎰]/g, '').trim()}`}
+                    >
+                      {action.label}
+                    </Button>
+                  ))}
+                </TabsContent>
+                
+                <TabsContent value="slots" className="p-4 space-y-2">
+                  {quickActions.slots.map((action, index) => (
+                    <Button 
+                      key={index}
+                      variant="ghost" 
+                      className="w-full justify-start text-card-foreground hover:bg-muted hover:text-accent-foreground text-sm p-3 h-auto"
+                      aria-label={`Play ${action.label.replace(/[💎🌟🔥]/g, '').trim()}`}
+                    >
+                      {action.label}
+                    </Button>
+                  ))}
+                </TabsContent>
+              </Tabs>
+            </Card>
           </div>
         </div>
       </div>
 
-      {/* Slide Navigation Dots */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {heroSlides.map((_, index) => (
+      {/* Slide Navigation */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3" role="tablist" aria-label="Hero slides">
+        {heroSlides.map((slide, index) => (
           <button
-            key={index}
+            key={slide.id}
+            role="tab"
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-200 ${
-              index === currentSlide ? 'bg-white' : 'bg-white/50'
+              index === currentSlide 
+                ? 'bg-accent scale-125 shadow-lg' 
+                : 'bg-foreground/30 hover:bg-foreground/50'
             }`}
+            aria-selected={index === currentSlide}
+            aria-label={`Go to slide ${index + 1}: ${slide.title}`}
           />
         ))}
       </div>

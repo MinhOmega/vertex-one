@@ -45,78 +45,224 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  
+  /* Light theme - Gaming-optimized colors with better contrast */
+  --background: oklch(0.98 0.003 106.423);
+  --foreground: oklch(0.135 0.042 254.139);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.135 0.042 254.139);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.135 0.042 254.139);
+  
+  /* Primary - Gaming blue/purple gradient base */
+  --primary: oklch(0.478 0.205 261.689);
+  --primary-foreground: oklch(1 0 0);
+  
+  /* Secondary - Complementary accent */
+  --secondary: oklch(0.921 0.019 106.423);
+  --secondary-foreground: oklch(0.135 0.042 254.139);
+  
+  /* Muted tones */
+  --muted: oklch(0.95 0.013 106.423);
+  --muted-foreground: oklch(0.556 0.015 247.858);
+  
+  /* Accent - Gaming yellow/gold */
+  --accent: oklch(0.827 0.184 83.317);
+  --accent-foreground: oklch(0.135 0.042 254.139);
+  
+  /* States */
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --destructive-foreground: oklch(1 0 0);
+  --success: oklch(0.685 0.182 142.512);
+  --success-foreground: oklch(1 0 0);
+  --warning: oklch(0.827 0.184 83.317);
+  --warning-foreground: oklch(0.135 0.042 254.139);
+  
+  /* Interface elements */
+  --border: oklch(0.889 0.018 106.423);
+  --input: oklch(0.95 0.013 106.423);
+  --ring: oklch(0.478 0.205 261.689);
+  
+  /* Gaming-specific colors */
+  --gaming-gradient-start: oklch(0.478 0.205 261.689);
+  --gaming-gradient-middle: oklch(0.596 0.195 292.417);
+  --gaming-gradient-end: oklch(0.598 0.177 184.704);
+  --gaming-accent: oklch(0.827 0.184 83.317);
+  --gaming-success: oklch(0.685 0.182 142.512);
+  --gaming-danger: oklch(0.647 0.245 27.325);
+  
+  /* Chart colors - vibrant for gaming */
+  --chart-1: oklch(0.478 0.205 261.689);
+  --chart-2: oklch(0.598 0.177 184.704);
+  --chart-3: oklch(0.827 0.184 83.317);
+  --chart-4: oklch(0.685 0.182 142.512);
+  --chart-5: oklch(0.647 0.245 27.325);
+  
+  /* Sidebar colors */
+  --sidebar: oklch(0.99 0.003 106.423);
+  --sidebar-foreground: oklch(0.135 0.042 254.139);
+  --sidebar-primary: oklch(0.478 0.205 261.689);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.95 0.013 106.423);
+  --sidebar-accent-foreground: oklch(0.135 0.042 254.139);
+  --sidebar-border: oklch(0.889 0.018 106.423);
+  --sidebar-ring: oklch(0.478 0.205 261.689);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Dark theme - Gaming-optimized with proper contrast ratios */
+  --background: oklch(0.095 0.015 254.139);
+  --foreground: oklch(0.955 0.010 106.423);
+  --card: oklch(0.145 0.020 254.139);
+  --card-foreground: oklch(0.955 0.010 106.423);
+  --popover: oklch(0.145 0.020 254.139);
+  --popover-foreground: oklch(0.955 0.010 106.423);
+  
+  /* Primary - Brighter for dark theme */
+  --primary: oklch(0.628 0.225 261.689);
+  --primary-foreground: oklch(0.095 0.015 254.139);
+  
+  /* Secondary */
+  --secondary: oklch(0.195 0.025 254.139);
+  --secondary-foreground: oklch(0.955 0.010 106.423);
+  
+  /* Muted */
+  --muted: oklch(0.195 0.025 254.139);
+  --muted-foreground: oklch(0.708 0.015 247.858);
+  
+  /* Accent - Gaming yellow/gold for dark */
+  --accent: oklch(0.877 0.204 83.317);
+  --accent-foreground: oklch(0.095 0.015 254.139);
+  
+  /* States */
+  --destructive: oklch(0.727 0.265 27.325);
+  --destructive-foreground: oklch(0.095 0.015 254.139);
+  --success: oklch(0.735 0.202 142.512);
+  --success-foreground: oklch(0.095 0.015 254.139);
+  --warning: oklch(0.877 0.204 83.317);
+  --warning-foreground: oklch(0.095 0.015 254.139);
+  
+  /* Interface elements */
+  --border: oklch(0.269 0.030 254.139);
+  --input: oklch(0.195 0.025 254.139);
+  --ring: oklch(0.628 0.225 261.689);
+  
+  /* Gaming-specific colors for dark theme */
+  --gaming-gradient-start: oklch(0.628 0.225 261.689);
+  --gaming-gradient-middle: oklch(0.696 0.215 292.417);
+  --gaming-gradient-end: oklch(0.698 0.197 184.704);
+  --gaming-accent: oklch(0.877 0.204 83.317);
+  --gaming-success: oklch(0.735 0.202 142.512);
+  --gaming-danger: oklch(0.727 0.265 27.325);
+  
+  /* Chart colors - vibrant for dark theme */
+  --chart-1: oklch(0.628 0.225 261.689);
+  --chart-2: oklch(0.698 0.197 184.704);
+  --chart-3: oklch(0.877 0.204 83.317);
+  --chart-4: oklch(0.735 0.202 142.512);
+  --chart-5: oklch(0.727 0.265 27.325);
+  
+  /* Sidebar colors */
+  --sidebar: oklch(0.095 0.015 254.139);
+  --sidebar-foreground: oklch(0.955 0.010 106.423);
+  --sidebar-primary: oklch(0.628 0.225 261.689);
+  --sidebar-primary-foreground: oklch(0.095 0.015 254.139);
+  --sidebar-accent: oklch(0.195 0.025 254.139);
+  --sidebar-accent-foreground: oklch(0.955 0.010 106.423);
+  --sidebar-border: oklch(0.269 0.030 254.139);
+  --sidebar-ring: oklch(0.628 0.225 261.689);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+  
+  /* Improved button focus */
+  button:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+  
+  /* Skip to content link */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50;
+    @apply bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium;
+  }
+}
+
+@layer components {
+  /* Gaming-specific utility classes */
+  .gaming-gradient {
+    background: linear-gradient(135deg, 
+      oklch(var(--gaming-gradient-start)), 
+      oklch(var(--gaming-gradient-middle)), 
+      oklch(var(--gaming-gradient-end))
+    );
+  }
+  
+  .gaming-gradient-hover {
+    background: linear-gradient(135deg, 
+      oklch(var(--gaming-gradient-start) / 0.9), 
+      oklch(var(--gaming-gradient-middle) / 0.9), 
+      oklch(var(--gaming-gradient-end) / 0.9)
+    );
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .dark {
+      --foreground: oklch(1 0 0);
+      --background: oklch(0 0 0);
+      --border: oklch(0.5 0 0);
+    }
+    
+    :root {
+      --foreground: oklch(0 0 0);
+      --background: oklch(1 0 0);
+      --border: oklch(0.5 0 0);
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    * {
+      background: transparent !important;
+      color: black !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+    
+    .no-print {
+      display: none !important;
+    }
   }
 }
