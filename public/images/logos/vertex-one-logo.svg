@@ -1,0 +1,12 @@
+<svg width="120" height="60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M10 20 L30 50 L50 20 L30 5 Z" fill="url(#logoGrad)"/>
+  <text x="65" y="25" font-size="14" font-weight="bold" fill="url(#logoGrad)">VERTEX</text>
+  <text x="65" y="40" font-size="14" font-weight="bold" fill="url(#logoGrad)">ONE</text>
+</svg>
