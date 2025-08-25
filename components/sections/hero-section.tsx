@@ -182,6 +182,7 @@ const HeroSection = () => {
           fill
           className="object-cover"
           priority
+          fetchPriority="high"
           sizes="100vw"
         />
       </div>
@@ -274,7 +275,7 @@ const HeroSection = () => {
                 >
                   <CardContent className="p-4 text-center">
                     <feature.icon className={`w-8 h-8 mx-auto mb-2 ${feature.color}`} aria-hidden="true" />
-                    <h3 className="font-bold text-card-foreground text-sm">{feature.title}</h3>
+                    <div className="font-bold text-card-foreground text-sm">{feature.title}</div>
                     <p className="text-muted-foreground text-xs">{feature.desc}</p>
                   </CardContent>
                 </Card>
@@ -335,7 +336,7 @@ const HeroSection = () => {
                             </AvatarFallback>
                           </Avatar>
                           <div>
-                            <div className="flex justify-center space-x-1 mb-3" aria-label={`${review.rating} out of 5 stars`}>
+                            <div className="flex justify-center space-x-1 mb-3" role="img" aria-label={`${review.rating} out of 5 stars`}>
                               {Array.from({ length: review.rating }).map((_, i) => (
                                 <Star key={i} className="w-4 h-4 text-accent fill-current" aria-hidden="true" />
                               ))}

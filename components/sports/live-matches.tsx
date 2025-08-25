@@ -226,7 +226,7 @@ const LiveMatches = () => {
             <TabsTrigger value="live" className="flex items-center space-x-2">
               <Play className="w-4 h-4" />
               <span>Live</span>
-              <Badge className="bg-red-500">6</Badge>
+              <Badge className="bg-red-600">6</Badge>
             </TabsTrigger>
             <TabsTrigger value="today" className="flex items-center space-x-2">
               <Clock className="w-4 h-4" />
@@ -261,7 +261,7 @@ const LiveMatches = () => {
                   <CardHeader className="bg-gradient-to-r from-green-500 to-blue-600 text-white">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center space-x-3">
-                        <Badge className="bg-red-500 animate-pulse">
+                        <Badge className="bg-red-600 animate-pulse">
                           🔴 LIVE
                         </Badge>
                         <span className="font-semibold">{match.league}</span>
@@ -289,7 +289,7 @@ const LiveMatches = () => {
                           <div className="text-center flex-1">
                             <div className="flex items-center justify-center mb-2">
                               <Avatar className="w-12 h-12 mr-3">
-                                <AvatarFallback className="bg-blue-500 text-white font-bold">
+                                <AvatarFallback className="bg-blue-600 text-white font-bold">
                                   {match.homeTeam.split(' ')[0].substring(0, 2).toUpperCase()}
                                 </AvatarFallback>
                               </Avatar>
@@ -310,7 +310,7 @@ const LiveMatches = () => {
                             <div className="flex items-center justify-center mb-2">
                               <h3 className="font-bold text-lg mr-3">{match.awayTeam}</h3>
                               <Avatar className="w-12 h-12">
-                                <AvatarFallback className="bg-red-500 text-white font-bold">
+                                <AvatarFallback className="bg-red-600 text-white font-bold">
                                   {match.awayTeam.split(' ')[0].substring(0, 2).toUpperCase()}
                                 </AvatarFallback>
                               </Avatar>
@@ -328,7 +328,7 @@ const LiveMatches = () => {
                             className="flex flex-col h-16 hover:bg-blue-50"
                             onClick={() => handleBetClick(match, 'home')}
                           >
-                            <span className="text-xs text-gray-500">Home</span>
+                            <span className="text-xs text-gray-700 dark:text-gray-300">Home</span>
                             <span className="font-bold text-lg">{formatOdds(match.odds.home)}</span>
                           </Button>
                           <Button
@@ -336,7 +336,7 @@ const LiveMatches = () => {
                             className="flex flex-col h-16 hover:bg-gray-50"
                             onClick={() => handleBetClick(match, 'draw')}
                           >
-                            <span className="text-xs text-gray-500">Draw</span>
+                            <span className="text-xs text-gray-700 dark:text-gray-300">Draw</span>
                             <span className="font-bold text-lg">{formatOdds(match.odds.draw)}</span>
                           </Button>
                           <Button
@@ -344,7 +344,7 @@ const LiveMatches = () => {
                             className="flex flex-col h-16 hover:bg-red-50"
                             onClick={() => handleBetClick(match, 'away')}
                           >
-                            <span className="text-xs text-gray-500">Away</span>
+                            <span className="text-xs text-gray-700 dark:text-gray-300">Away</span>
                             <span className="font-bold text-lg">{formatOdds(match.odds.away)}</span>
                           </Button>
                         </div>
@@ -369,7 +369,7 @@ const LiveMatches = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 items-center">
                       <div>
                         <Badge variant="outline" className="mb-2">{match.league}</Badge>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-700 dark:text-gray-300">
                           {match.date} • {match.time}
                         </div>
                       </div>
@@ -381,7 +381,7 @@ const LiveMatches = () => {
                           <span className="font-semibold">{match.awayTeam}</span>
                         </div>
                         <Progress value={match.popularity} className="mt-2" />
-                        <div className="text-xs text-gray-500 mt-1">
+                        <div className="text-xs text-gray-700 dark:text-gray-300 mt-1">
                           Popularity: {match.popularity}%
                         </div>
                       </div>
@@ -495,7 +495,7 @@ const LiveMatches = () => {
                   <p className="font-semibold">
                     {selectedMatch.homeTeam} vs {selectedMatch.awayTeam}
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
                     Bet Type: {selectedMatch.betType === 'home' ? 'Home Win' : selectedMatch.betType === 'draw' ? 'Draw' : 'Away Win'}
                   </p>
                 </div>

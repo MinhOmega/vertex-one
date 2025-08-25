@@ -123,6 +123,7 @@ const Footer = () => {
                   variant="outline" 
                   size="sm" 
                   className="border-gray-600 text-gray-300 hover:bg-white hover:text-black transition-all duration-200"
+                  aria-label={`Visit our ${social.name} page`}
                 >
                   <social.icon className="w-4 h-4" />
                 </Button>
@@ -204,14 +205,14 @@ const Footer = () => {
                 <CardContent className="p-4 text-center">
                   <Users className="w-6 h-6 mx-auto mb-2 text-blue-400" />
                   <p className="text-xl font-bold">24,857</p>
-                   <p className="text-xs text-gray-400">Online Players</p>
+                   <p className="text-xs text-gray-300">Online Players</p>
                  </CardContent>
                </Card>
                <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
                  <CardContent className="p-4 text-center">
                    <Star className="w-6 h-6 mx-auto mb-2 text-yellow-400" />
                    <p className="text-xl font-bold">4.9</p>
-                   <p className="text-xs text-gray-400">Average Rating</p>
+                   <p className="text-xs text-gray-300">Average Rating</p>
                 </CardContent>
               </Card>
             </div>
@@ -232,15 +233,15 @@ const Footer = () => {
            </p>
           
           <div className="flex justify-center space-x-6">
-             <Badge className="bg-green-500">
+             <Badge className="bg-green-600">
                <Shield className="w-3 h-3 mr-1" />
                100% Safe
              </Badge>
-             <Badge className="bg-blue-500">
+             <Badge className="bg-blue-600">
                <Award className="w-3 h-3 mr-1" />
                Licensed
              </Badge>
-             <Badge className="bg-purple-500">
+             <Badge className="bg-purple-600">
                <Heart className="w-3 h-3 mr-1" />
                Trusted
              </Badge>
@@ -252,7 +253,7 @@ const Footer = () => {
       <div className="bg-black/30 py-6">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-             <p className="text-gray-400 text-sm text-center md:text-left">
+             <p className="text-gray-300 text-sm text-center md:text-left">
                © {currentYear} Vertex One. All rights reserved.
                <span className="mx-2">•</span>
                <a href="#" className="hover:text-yellow-400 transition-colors">Terms of Use</a>
@@ -263,9 +264,9 @@ const Footer = () => {
              </p>
             
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-4 bg-red-500 rounded-sm"></div>
+              <div className="w-6 h-4 bg-red-600 rounded-sm"></div>
               <div className="w-6 h-4 bg-yellow-400 rounded-sm"></div>
-              <span className="text-xs text-gray-400">Chỉ dành cho 18+</span>
+              <span className="text-xs text-gray-300">Chỉ dành cho 18+</span>
             </div>
           </div>
         </div>

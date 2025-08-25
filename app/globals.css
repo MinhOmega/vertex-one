@@ -64,7 +64,7 @@
   
   /* Muted tones */
   --muted: oklch(0.95 0.013 106.423);
-  --muted-foreground: oklch(0.556 0.015 247.858);
+  --muted-foreground: oklch(0.456 0.015 247.858);
   
   /* Accent - Gaming yellow/gold */
   --accent: oklch(0.827 0.184 83.317);
@@ -128,7 +128,7 @@
   
   /* Muted */
   --muted: oklch(0.195 0.025 254.139);
-  --muted-foreground: oklch(0.708 0.015 247.858);
+  --muted-foreground: oklch(0.758 0.015 247.858);
   
   /* Accent - Gaming yellow/gold for dark */
   --accent: oklch(0.877 0.204 83.317);
