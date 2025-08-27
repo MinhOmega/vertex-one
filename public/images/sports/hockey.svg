@@ -1,6 +1,1 @@
-<svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-  <rect width="150" height="150" fill="#8e44ad" rx="10"/>
-  <circle cx="75" cy="75" r="40" fill="rgba(255,255,255,0.2)"/>
-  <text x="75" y="85" font-size="24" text-anchor="middle">🏒</text>
-  <text x="75" y="125" font-size="8" text-anchor="middle" fill="#fff">HOCKEY</text>
-</svg>
+<svg width="150" height="150" xmlns="http://www.w3.org/2000/svg"><rect width="150" height="150" fill="#8e44ad" rx="10"/><circle cx="75" cy="75" r="40" fill="rgba(255,255,255,0.2)"/><text x="75" y="85" font-size="24" text-anchor="middle">🏒</text><text x="75" y="125" font-size="8" text-anchor="middle" fill="#fff">HOCKEY</text></svg>
