@@ -1,34 +1,31 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  Sparkles, 
-  TrendingUp, 
-  Zap, 
-  Crown, 
-  Gift, 
-  Star,
-  Users,
+import {
+  ArrowRight,
+  Crown,
   DollarSign,
-  Trophy,
   Flame,
-  Target,
-  Rocket,
+  Gift,
   Heart,
+  Rocket,
   Shield,
-  ArrowRight
+  Star,
+  Target,
+  TrendingUp,
+  Trophy,
+  Users
 } from 'lucide-react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [progress, setProgress] = useState(0);
   const [userCount, setUserCount] = useState(142857);
 
@@ -48,43 +45,14 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const heroSlides = [
-    {
-      id: 'welcome-slide',
-      title: "Welcome to the Premier Betting World",
-      subtitle: "Experience top-tier sports betting and casino with the best odds",
-      icon: Crown,
-      bonus: "200%",
-      cta: "Register Now",
-      ctaSecondary: "View Live Scores"
-    },
-    {
-      id: 'casino-slide',
-      title: "High-Quality Live Casino",
-      subtitle: "Professional dealers, experience like in Las Vegas",
-      icon: Sparkles,
-      bonus: "150%",
-      cta: "Enter Casino",
-      ctaSecondary: "View Games"
-    },
-    {
-      id: 'slots-slide',
-      title: "Modern Slot Machines With Huge Jackpots",
-      subtitle: "Thousands of slot games with jackpots up to billions",
-      icon: Zap,
-      bonus: "300%",
-      cta: "Play Slots",
-      ctaSecondary: "View Jackpot"
-    }
-  ];
-
-  // Auto slide effect
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % heroSlides.length);
-    }, 8000);
-    return () => clearInterval(timer);
-  }, [heroSlides.length]);
+  const heroData = {
+    title: "Welcome to the Premier Betting World",
+    subtitle: "Experience top-tier sports betting and casino with the best odds",
+    icon: Crown,
+    bonus: "200%",
+    cta: "Register Now",
+    ctaSecondary: "View Live Scores"
+  };
 
   const features = [
     { icon: Shield, title: "Absolute Security", desc: "SSL 256-bit Encryption", color: "text-success" },
@@ -166,8 +134,6 @@ const HeroSection = () => {
     ]
   };
 
-  const CurrentSlide = heroSlides[currentSlide];
-
   return (
     <section 
       className="relative min-h-[85vh] gaming-gradient overflow-hidden"
@@ -194,10 +160,10 @@ const HeroSection = () => {
             <div className="space-y-6">
               <Badge 
                 className="bg-accent text-accent-foreground font-bold text-lg px-4 py-2 animate-pulse shadow-lg"
-                aria-label={`Welcome bonus ${CurrentSlide.bonus} percent`}
+                aria-label={`Welcome bonus ${heroData.bonus} percent`}
               >
                 <Gift className="w-5 h-5 mr-2" aria-hidden="true" />
-                Welcome Bonus {CurrentSlide.bonus}%
+                Welcome Bonus {heroData.bonus}%
               </Badge>
               
               <div className="space-y-4">
@@ -205,15 +171,15 @@ const HeroSection = () => {
                   id="hero-title"
                   className="text-4xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight"
                 >
-                  {CurrentSlide.title}
-                  <CurrentSlide.icon 
-                    className="inline-block w-12 h-12 lg:w-16 lg:h-16 ml-4 text-accent animate-spin" 
+                  {heroData.title}
+                  <heroData.icon 
+                    className="inline-block w-12 h-12 lg:w-16 lg:h-16 ml-4 text-accent" 
                     aria-hidden="true" 
                   />
                 </h1>
                 
                 <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                  {CurrentSlide.subtitle}
+                  {heroData.subtitle}
                 </p>
               </div>
             </div>
@@ -223,20 +189,20 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-8 py-4 transform hover:scale-105 transition-all duration-200 shadow-xl"
-                aria-label={`${CurrentSlide.cta} - Register now to get started`}
+                aria-label={`${heroData.cta} - Register now to get started`}
               >
                 <Star className="w-5 h-5 mr-2" aria-hidden="true" />
-                {CurrentSlide.cta}
+                {heroData.cta}
                 <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
                 className="border-2 border-foreground/20 text-foreground hover:bg-muted hover:text-accent-foreground font-bold text-lg px-8 py-4 backdrop-blur-sm"
-                aria-label={CurrentSlide.ctaSecondary}
+                aria-label={heroData.ctaSecondary}
               >
                 <TrendingUp className="w-5 h-5 mr-2" aria-hidden="true" />
-                {CurrentSlide.ctaSecondary}
+                {heroData.ctaSecondary}
               </Button>
             </div>
 
@@ -416,24 +382,6 @@ const HeroSection = () => {
             </Card>
           </div>
         </div>
-      </div>
-
-      {/* Slide Navigation */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3" role="tablist" aria-label="Hero slides">
-        {heroSlides.map((slide, index) => (
-          <button
-            key={slide.id}
-            role="tab"
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-200 ${
-              index === currentSlide 
-                ? 'bg-accent scale-125 shadow-lg' 
-                : 'bg-foreground/30 hover:bg-foreground/50'
-            }`}
-            aria-selected={index === currentSlide}
-            aria-label={`Go to slide ${index + 1}: ${slide.title}`}
-          />
-        ))}
       </div>
     </section>
   );
