@@ -178,14 +178,14 @@ const LiveMatches = () => {
           {/* Sports Gallery */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {[
-              { name: 'Football', image: '/images/sports/football-stadium.webp' },
-              { name: 'Basketball', image: '/images/sports/basketball-court.webp' },
-              { name: 'Tennis', image: '/images/sports/tennis-match.webp' },
-              { name: 'Boxing', image: '/images/sports/boxing-ring.webp' },
-              { name: 'Soccer', image: '/images/sports/soccer-field.webp' },
-              { name: 'Volleyball', image: '/images/sports/volleyball-net.webp' },
-              { name: 'Hockey', image: '/images/sports/hockey-rink.webp' },
-              { name: 'Golf', image: '/images/sports/golf-course.webp' }
+              { name: 'Football', image: '/images/sports/football-stadium.avif' },
+              { name: 'Basketball', image: '/images/sports/basketball-court.avif' },
+              { name: 'Tennis', image: '/images/sports/tennis-match.avif' },
+              { name: 'Boxing', image: '/images/sports/boxing-ring.avif' },
+              { name: 'Soccer', image: '/images/sports/soccer-field.avif' },
+              { name: 'Volleyball', image: '/images/sports/volleyball-net.avif' },
+              { name: 'Hockey', image: '/images/sports/hockey-rink.avif' },
+              { name: 'Golf', image: '/images/sports/golf-course.avif' }
             ].map((sport, index) => (
               <div key={index} className="relative group cursor-pointer">
                 <div className="relative w-full h-20 rounded-lg overflow-hidden">

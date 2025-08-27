@@ -143,7 +143,7 @@ const HeroSection = () => {
       {/* Background Image with proper alt text */}
       <div className="absolute inset-0 opacity-10 dark:opacity-20" aria-hidden="true">
         <Image
-          src="/images/banners/hero-banner-1.webp"
+          src="/images/banners/hero-banner-1.avif"
           alt=""
           fill
           className="object-cover"

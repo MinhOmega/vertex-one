@@ -56,7 +56,7 @@ const CasinoGames = () => {
       paylines: 25,
       minBet: 10,
       maxBet: 10000,
-      image: '/images/slots/golden-dragon.webp',
+      image: '/images/slots/golden-dragon.avif',
       hot: true
     },
     {
@@ -70,7 +70,7 @@ const CasinoGames = () => {
       paylines: 20,
       minBet: 5,
       maxBet: 5000,
-      image: '/images/slots/lucky-gems.webp',
+      image: '/images/slots/lucky-gems.avif',
       new: true
     },
     {
@@ -84,7 +84,7 @@ const CasinoGames = () => {
       paylines: 40,
       minBet: 20,
       maxBet: 20000,
-      image: '/images/slots/fortune-wheel.webp',
+      image: '/images/slots/fortune-wheel.avif',
       popular: true
     },
     {
@@ -98,7 +98,7 @@ const CasinoGames = () => {
       paylines: 30,
       minBet: 15,
       maxBet: 15000,
-      image: '/images/slots/fire-phoenix.webp',
+      image: '/images/slots/fire-phoenix.avif',
       featured: true
     },
     {
@@ -112,7 +112,7 @@ const CasinoGames = () => {
       paylines: 20,
       minBet: 10,
       maxBet: 8000,
-      image: '/images/slots/ice-queen.webp',
+      image: '/images/slots/ice-queen.avif',
       hot: true
     },
     {
@@ -126,7 +126,7 @@ const CasinoGames = () => {
       paylines: 50,
       minBet: 25,
       maxBet: 12000,
-      image: '/images/slots/wild-west.webp',
+      image: '/images/slots/wild-west.avif',
       featured: true
     }
   ];
@@ -139,7 +139,7 @@ const CasinoGames = () => {
       minBet: 100,
       maxBet: 100000,
       dealer: 'Sophia',
-      image: '/images/casino/baccarat.webp',
+      image: '/images/casino/baccarat.avif',
       type: 'Baccarat'
     },
     {
@@ -149,7 +149,7 @@ const CasinoGames = () => {
       minBet: 50,
       maxBet: 50000,
       dealer: 'Michael',
-      image: '/images/casino/blackjack.webp',
+      image: '/images/casino/blackjack.avif',
       type: 'Blackjack'
     },
     {
@@ -159,7 +159,7 @@ const CasinoGames = () => {
       minBet: 25,
       maxBet: 25000,
       dealer: 'Elena',
-      image: '/images/casino/roulette.webp',
+      image: '/images/casino/roulette.avif',
       type: 'Roulette'
     },
     {
@@ -169,7 +169,7 @@ const CasinoGames = () => {
       minBet: 200,
       maxBet: 200000,
       dealer: 'David',
-      image: '/images/casino/poker-table.webp',
+      image: '/images/casino/poker-table.avif',
       type: 'Poker'
     },
     {
@@ -179,7 +179,7 @@ const CasinoGames = () => {
       minBet: 75,
       maxBet: 75000,
       dealer: 'James',
-      image: '/images/casino/craps.webp',
+      image: '/images/casino/craps.avif',
       type: 'Craps'
     },
     {
@@ -189,7 +189,7 @@ const CasinoGames = () => {
       minBet: 150,
       maxBet: 50000,
       dealer: 'Maria',
-      image: '/images/casino/pai-gow.webp',
+      image: '/images/casino/pai-gow.avif',
       type: 'Pai Gow'
     }
   ];
