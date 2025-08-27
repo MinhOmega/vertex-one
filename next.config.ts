@@ -32,10 +32,22 @@ const nextConfig: NextConfig = {
        '@radix-ui/react-tooltip',
        'lucide-react'
      ],
-     // Optimize CSS loading
+     inlineCss: true,
+     // Optimize CSS loading - Critical for FCP/LCP
      optimizeCss: true,
+     // Enable CSS chunking for better loading performance
+     cssChunking: 'strict',
      // Optimize font loading
-     webVitalsAttribution: ['CLS', 'LCP']
+     webVitalsAttribution: ['CLS', 'LCP', 'FCP'],
+     // Enable turbo for faster builds
+     turbo: {
+       rules: {
+         '*.css': {
+           loaders: ['css-loader'],
+           as: '*.js',
+         },
+       },
+     },
    },
 
    // Server external packages optimization
@@ -53,6 +65,27 @@ const nextConfig: NextConfig = {
   
   // Webpack optimizations
   webpack: (config, { isServer }) => {
+    // Optimize CSS loading for better FCP/LCP
+    if (!isServer) {
+      // Enable CSS optimization
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          ...config.optimization.splitChunks,
+          cacheGroups: {
+            ...config.optimization.splitChunks.cacheGroups,
+            // Extract critical CSS into separate chunk
+            styles: {
+              name: 'styles',
+              type: 'css/mini-extract',
+              chunks: 'all',
+              enforce: true,
+            },
+          },
+        },
+      };
+    }
+    
     // Tree shake Lucide React icons
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -119,6 +152,20 @@ const nextConfig: NextConfig = {
            {
              key: 'Cache-Control',
              value: 'public, max-age=31536000, immutable',
+           },
+         ],
+       },
+       // Optimize CSS caching - Critical for FCP/LCP
+       {
+         source: '/_next/static/css/(.*)',
+         headers: [
+           {
+             key: 'Cache-Control',
+             value: 'public, max-age=31536000, immutable',
+           },
+           {
+             key: 'X-Content-Type-Options',
+             value: 'nosniff',
            },
          ],
        },

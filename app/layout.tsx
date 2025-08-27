@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
+import { CriticalCSS, DeferredCSS } from "@/components/css-optimization";
 import "./globals.css";
 
 const inter = Inter({ 
   subsets: ["latin"],
   display: 'swap',
   preload: true,
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -93,6 +95,9 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <head>
+        {/* Critical CSS for immediate render - Prevents render blocking */}
+        <CriticalCSS />
+        
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -135,9 +140,16 @@ export default function RootLayout({
           }}
         />
         
+        {/* Performance optimizations for CSS loading */}
+        <DeferredCSS />
+        
         {/* Additional Performance Optimizations */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="//vercel.app" />
+        
+        {/* Resource hints for better loading performance */}
+        <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" type="font/woff2" crossOrigin="anonymous" />
         
         {/* Viewport and mobile optimization */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
