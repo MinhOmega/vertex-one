@@ -1,30 +1,25 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from '@/components/ui/navigation-menu';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Separator } from '@/components/ui/separator';
-import { 
-  Menu, 
-  Globe, 
-  Home, 
-  TrendingUp, 
-  Gamepad2, 
-  Dice6, 
-  Trophy, 
-  LogIn, 
-  Moon, 
-  Sun, 
-  Monitor 
+import {
+  Menu,
+  Globe,
+  Home,
+  TrendingUp,
+  Gamepad2,
+  Dice6,
+  Trophy,
+  LogIn
 } from 'lucide-react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { setTheme } = useTheme();
 
   const languages = [
     { code: 'vn', name: 'Tiếng Việt', flag: '🇻🇳' },
@@ -82,11 +77,7 @@ const Header = () => {
     { icon: '🏐', label: 'Volleyball', href: '#volleyball' },
   ];
 
-  const themeOptions = [
-    { value: 'light', label: 'Light Mode', icon: Sun },
-    { value: 'dark', label: 'Dark Mode', icon: Moon },
-    { value: 'system', label: 'System', icon: Monitor },
-  ];
+
 
   return (
     <header 
@@ -136,33 +127,7 @@ const Header = () => {
 
           {/* Right side controls */}
           <div className="flex items-center space-x-3">
-            {/* Theme Selector */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  className="text-foreground hover:bg-muted"
-                  aria-label="Toggle theme"
-                >
-                  <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                  <span className="sr-only">Toggle theme</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-36">
-                {themeOptions.map((option) => (
-                  <DropdownMenuItem 
-                    key={option.value} 
-                    onClick={() => setTheme(option.value)}
-                    className="flex items-center space-x-2 cursor-pointer"
-                  >
-                    <option.icon className="h-4 w-4" />
-                    <span>{option.label}</span>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+
 
             {/* Language Dropdown */}
             <DropdownMenu>

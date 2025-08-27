@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
-import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -149,51 +148,25 @@ export default function RootLayout({
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       </head>
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
+        {/* Skip to main content for accessibility */}
+        <a
+          href="#main-content"
+          className="skip-link"
         >
-          {/* Skip to main content for accessibility */}
-          <a 
-            href="#main-content" 
-            className="skip-link"
-          >
-            Skip to main content
-          </a>
-          
-          {/* Main content wrapper */}
-          <div id="main-content" className="min-h-screen flex flex-col">
-            {children}
-          </div>
-          
-          {/* Toast notifications */}
-          <Toaster 
-            position="bottom-right"
-            toastOptions={{
-              duration: 4000,
-              className: "bg-card text-card-foreground border border-border shadow-lg",
-            }}
-          />
-        </ThemeProvider>
-        
-        {/* Performance monitoring */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Basic performance monitoring
-              if (typeof window !== 'undefined') {
-                window.addEventListener('load', function() {
-                  // Log Core Web Vitals
-                  new PerformanceObserver((entryList) => {
-                    for (const entry of entryList.getEntries()) {
-                      console.log(entry.name + ':', entry.value);
-                    }
-                  }).observe({entryTypes: ['measure']});
-                });
-              }
-            `
+          Skip to main content
+        </a>
+
+        {/* Main content wrapper */}
+        <div id="main-content" className="min-h-screen flex flex-col">
+          {children}
+        </div>
+
+        {/* Toast notifications */}
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            duration: 4000,
+            className: "bg-card text-card-foreground border border-border shadow-lg",
           }}
         />
       </body>

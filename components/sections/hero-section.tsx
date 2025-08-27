@@ -186,14 +186,6 @@ const HeroSection = () => {
           sizes="100vw"
         />
       </div>
-      
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-accent/10 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-primary/20 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-secondary/15 rounded-full animate-pulse delay-300"></div>
-        <div className="absolute bottom-40 right-10 w-20 h-20 bg-accent/20 rounded-full animate-bounce delay-700"></div>
-      </div>
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
